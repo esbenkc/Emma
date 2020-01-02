@@ -1,5 +1,5 @@
 # SOKRATES Sentiment Analysis Validation Dataset for Danish
-SOKRATES (Søren Orm and KRAn's Test for Emotional Sentiment) is a validation dataset for Danish sentiment analysis tools consisting of (currently) 584 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
+SOKRATES (Søren Orm and KRAn's Test for Emotional Sentiment) is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
 - [Introduction](#introduction)
 - [Citation](#citing-this-work)
 - [SOKRATES](#sokrates)
