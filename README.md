@@ -47,7 +47,9 @@ All data is in .csv format in UTF-8 encoding.
 
 ### Documentation and examples
 The function:
-`SentidaV2 ( character, output = ["mean", "total"] )`
+```
+SentidaV2 ( character, output = ["mean", "total"] )
+```
 Usage examples:
 ```
 print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
