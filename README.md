@@ -46,9 +46,10 @@ All data is in .csv format in UTF-8 encoding.
 ### Installation
 
 ### Documentation and examples
-´Sentida V2 ( character, output = ["mean", "total"] )´
-
-´´´
+The function:
+`SentidaV2 ( character, output = ["mean", "total"] )`
+Usage examples:
+```
 print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
 # Example of usage: 2.0
 print("With exclamation mark: ", sentidaV2("Lad der blive fred!", output = "mean"))
@@ -63,8 +64,7 @@ print("Negation in sentence: ", sentidaV2("Det går ikke dårligt.", output = "m
 # Negation in sentence:  1.8333333333333335
 print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
 # 'Men' ('but'):  -1.5
-
-´´´
+```
 ### References
 Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38–53.
 
