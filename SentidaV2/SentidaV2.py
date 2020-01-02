@@ -719,7 +719,7 @@ def get_sentiment(word_list):
 
 
 # Function for turning a sentence into a mean sentiment score:
-def sentida(sentence):
+def sentidaV2(sentence, output = ["mean", "total"]):
     words_caps = clean_words_caps(sentence)
     words_lower = clean_words_lower(sentence)
     stemmed = stemning(words_lower)
@@ -748,6 +748,23 @@ def sentida(sentence):
     if mean_sentiment < -10:
         mean_sentiment = -10
     return mean_sentiment
+
+def sentidaV2_examples() { # Examples
+    print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
+    # Example of usage: 2.0
+    print("With exclamation mark: ", sentidaV2("Lad der blive fred!", output = "mean"))
+    # With exclamation mark: 3.13713
+    print("With several exclamation mark: ", sentidaV2("Lad der blive fred!!!", output = "mean"))
+    # With several exclamation mark:  3.7896530399999997
+    print("Uppercase: ", sentidaV2("Lad der BLIVE FRED", output = "mean"))
+    # Uppercase:  3.466
+    print("Negative sentence: ", sentidaV2("Det går dårligt.", output = "mean"))
+    # With exclamation mark:  -1.8333333333333335
+    print("Negation in sentence: ", sentidaV2("Det går ikke dårligt.", output = "mean"))
+    # Negation in sentence:  1.8333333333333335
+    print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
+    # 'Men' ('but'):  -1.5
+}
 
 #print('Sentida er fint nok, men har du set SOKRATES?')
 #print(sentida('Sentida er fint nok, men har du set SOKRATES?'))
