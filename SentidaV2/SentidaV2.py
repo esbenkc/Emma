@@ -749,7 +749,7 @@ def sentidaV2(sentence, output = ["mean", "total"]):
         mean_sentiment = -10
     return mean_sentiment
 
-def sentidaV2_examples() { # Examples
+def sentidaV2_examples():
     print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
     # Example of usage: 2.0
     print("With exclamation mark: ", sentidaV2("Lad der blive fred!", output = "mean"))
@@ -764,7 +764,6 @@ def sentidaV2_examples() { # Examples
     # Negation in sentence:  1.8333333333333335
     print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
     # 'Men' ('but'):  -1.5
-}
 
 #print('Sentida er fint nok, men har du set SOKRATES?')
 #print(sentida('Sentida er fint nok, men har du set SOKRATES?'))
