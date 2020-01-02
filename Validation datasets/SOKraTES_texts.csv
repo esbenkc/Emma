@@ -1,4 +1,4 @@
-variable,value
+category,text
 1,Alle har ret til at opføre sig som en idiot.
 1,Danmark kan redde hele jorden.
 1,De er ikke sure.
@@ -17,23 +17,23 @@ variable,value
 1,Der er nu gode eksempler i hele landet.
 1,Der ser ud til at være en vedholdende interesse
 1,Deres favorit tæller også med.
-1,"Derfor er jeg glad for, at skolerne sætter fokus på børnerettigheder."
-1,"Det betyder altid lidt ekstra, når man modtager en uventet anerkendelse."
+"1,""Derfor er jeg glad for, at skolerne sætter fokus på børnerettigheder."""
+"1,""Det betyder altid lidt ekstra, når man modtager en uventet anerkendelse."""
 1,Det er altid godt
 1,Det er altså mest praktisk med toget
 1,Det er bare altid godt
 1,Det er bare godt
-1,"Det er bare gået så godt, og alle er tilfredse og begejstrede."
+"1,""Det er bare gået så godt, og alle er tilfredse og begejstrede."""
 1,Det er bare skønt.
-1,"Det er da det jeg skal have, mand."
+"1,""Det er da det jeg skal have, mand."""
 1,Det er da fornuftigt.
 1,Det er da fornuftigt.
 1,Det er da lidt fornuftigt.
 1,Det er da nogenlunde fornuftigt.
-1,"Det er den udvikling, jeg går i gennem."
+"1,""Det er den udvikling, jeg går i gennem."""
 1,Det er det bedste jeg har hørt om.
-1,"Det er det bedste, jeg har set."
-1,"Det er det jeg skal have, mand."
+"1,""Det er det bedste, jeg har set."""
+"1,""Det er det jeg skal have, mand."""
 1,Det er det jeg skal have.
 1,Det er en god ide.
 1,Det er en klassiker.
@@ -41,7 +41,7 @@ variable,value
 1,Det er en rigtig god ide.
 1,det er en ære at komme i så fint selskab.
 1,Det er en ære at komme i sådan et selskab.
-1,"Det er et fantastik udgangspunkt, hvis vi skal styrke børns læselyst."
+"1,""Det er et fantastik udgangspunkt, hvis vi skal styrke børns læselyst."""
 1,Det er et spændende eksperiment.
 1,Det er flot og velfortjent
 1,Det er fornuftigt.
@@ -54,10 +54,10 @@ variable,value
 1,Det er ikke koldt.
 1,Det er jo skønt.
 1,Det er kraftedme en god træner!
-1,"Det er noget af det bedste, jeg har set."
+"1,""Det er noget af det bedste, jeg har set."""
 1,Det er også en mulighed.
 1,Det er rigtigt.
-1,"Det er sgu da det jeg skal have, mand."
+"1,""Det er sgu da det jeg skal have, mand."""
 1,Det er sjovt.
 1,Det er skønt.
 1,Det er spændende.
@@ -86,7 +86,7 @@ variable,value
 1,Det skal vi da se.
 1,Det skal vi se.
 1,Det smager ikke dårligt.
-1,"Det var der ingen i forsamlingen, der følte sig krænket."
+"1,""Det var der ingen i forsamlingen, der følte sig krænket."""
 1,Det var det her jeg mente!
 1,Det var en stor succes!
 1,Det var en stor succes.
@@ -105,46 +105,46 @@ variable,value
 1,Folk er fulde af kærlighed.
 1,Folk er glade
 1,Folk har ikke travlt.
-1,"Fuck, hvor er det bare sjovt."
-1,"Fuck, hvor er det sjovt."
-1,"Fuck, hvor sjovt."
-1,"Glæder mig så meget til, vi skal afsted igen."
-1,"Glæder mig til, vi skal afsted igen."
+"1,""Fuck, hvor er det bare sjovt."""
+"1,""Fuck, hvor er det sjovt."""
+"1,""Fuck, hvor sjovt."""
+"1,""Glæder mig så meget til, vi skal afsted igen."""
+"1,""Glæder mig til, vi skal afsted igen."""
 1,Han er ikke vred.
 1,Hun har altid ønsket at være designer.
 1,Hun var meget unik.
 1,Hun var unik.
-1,"Hvis man vil med, så skal man bare møde op"
+"1,""Hvis man vil med, så skal man bare møde op"""
 1,Hvor er det genialt!
 1,Hvor er det sødt.
 1,Hvor gør I det godt.
 1,Hyld magien ved automatiske undertekster.
 1,I dag er de gode venner
 1,I dag er de venner.
-1,"I virkeligheden elsker jeg min bil, og jeg elsker at køre i den."
-1,"Ingen kan være i tvivl om, at det er fortjent"
+"1,""I virkeligheden elsker jeg min bil, og jeg elsker at køre i den."""
+"1,""Ingen kan være i tvivl om, at det er fortjent"""
 1,Ingen klager herfra.
 1,Jeg blev færdig i går.
 1,Jeg blev ikke skuffet.
 1,Jeg bliver høj af det.
 1,Jeg er allerede færdig.
 1,Jeg er færdig.
-1,"Jeg er glad for, at de kom i dag."
-1,"Jeg er heller ikke i tvivl om, at de besøgende turister er begejstret."
+"1,""Jeg er glad for, at de kom i dag."""
+"1,""Jeg er heller ikke i tvivl om, at de besøgende turister er begejstret."""
 1,Jeg er ikke forvirret.
 1,Jeg er ikke målløs.
 1,Jeg glæder mig så meget.
 1,Jeg glæder mig til at se jer.
 1,Jeg glæder mig.
-1,"Jeg griner af de samme ting hver gang, det bliver bare aldrig kedeligt."
+"1,""Jeg griner af de samme ting hver gang, det bliver bare aldrig kedeligt."""
 1,Jeg har det ikke skidt
 1,Jeg har det varmt.
-1,"Jeg har haft et ret vildt år, hvor der er sket en masse."
+"1,""Jeg har haft et ret vildt år, hvor der er sket en masse."""
 1,Jeg har haft et vildt år.
 1,Jeg har i mange år drømt om at have mere tid til at udforske min kunst og male.
 1,Jeg har ikke brug for hjælp.
 1,Jeg har købt billetter.
-1,"Jeg håber virkelig, at vi vinder prisen."
+"1,""Jeg håber virkelig, at vi vinder prisen."""
 1,Jeg kan genkende dig.
 1,Jeg kan godt genkende dig.
 1,Jeg kan godt lide at tale med dem.
@@ -157,29 +157,29 @@ variable,value
 1,Jeg kunne ikke beskrive det bedere.
 1,Jeg stemmer på dig.
 1,Jeg synes det er fint.
-1,"Jeg synes, det er godt"
-1,"Jeg synes, det er rigtig fint"
-1,"Jeg synes, du skal ønske dig det her."
+"1,""Jeg synes, det er godt"""
+"1,""Jeg synes, det er rigtig fint"""
+"1,""Jeg synes, du skal ønske dig det her."""
 1,Jeg tog ikke fejl.
 1,Jeg tror du har forstået det!
 1,Jeg tror du har forstået det.
-1,"Jeg tror, jeg fortsætter lidt endnu."
-1,"Jeg tror, jeg fortsætter."
+"1,""Jeg tror, jeg fortsætter lidt endnu."""
+"1,""Jeg tror, jeg fortsætter."""
 1,Jeg tænker på dig.
-1,"Jeg ved ikke, hvornår det har gået bedre."
+"1,""Jeg ved ikke, hvornår det har gået bedre."""
 1,Jeg vil bestemt prøve den løsning næste gang.
 1,Jeg vil prøve den løsning næste gang.
 1,Kommunikationen til passagererne skal ikke forbedres
 1,Kufferten var så stor en succes.
-1,"Kæft, det er sejt."
+"1,""Kæft, det er sejt."""
 1,Lørdagens kamp var ekstrem vigtig for os.
 1,Maden er ikke for stærk
 1,Man kan og skal stemme i henhold til ens hjerte.
-1,"Man tager dog fejl, hvis man tror, at der er noget farligt."
+"1,""Man tager dog fejl, hvis man tror, at der er noget farligt."""
 1,Med den succes kommer vi til at gøre det igen.
 1,Mor er den bedste i verden.
 1,Motion holder hjernen sund gennem hele livet.
-1,"Nej, hvor sjovt."
+"1,""Nej, hvor sjovt."""
 1,Ordene skulle føles lette i munden.
 1,Programmet har ikke givet anledning til panderynker.
 1,Ses på fredag.
@@ -187,7 +187,7 @@ variable,value
 1,Stort hjerteligt tak for det!
 1,Så jeg så det som en god mulighed.
 1,Tiden er god til at planlægge det næste år.
-1,"Til alt held for hende, fik hun medvind fra folketinget"
+"1,""Til alt held for hende, fik hun medvind fra folketinget"""
 1,Udviklingen blev yderligere hjulpet på vej.
 1,Verden er altid ren
 1,Verden er ren
@@ -197,8 +197,8 @@ variable,value
 1,Vi er godt på vej
 1,Vi er nødt til at have sandheden.
 1,Vi er til at regne med.
-1,"Vi fik lagt den energi i det, som vi ville."
-1,"Vi glæder os til den tid, vi går i møde."
+"1,""Vi fik lagt den energi i det, som vi ville."""
+"1,""Vi glæder os til den tid, vi går i møde."""
 1,Vi har weekend!
 1,Vi kan den dag.
 1,Vi kan godt vinde.
@@ -206,10 +206,10 @@ variable,value
 1,Vi sender et klart signal.
 1,Vi skruer ned for støjen.
 1,Vores udstilling er enestående.
-1,"Åh, jeg glæder mig meget."
-1,"Åh, jeg glæder mig så meget!"
-1,"Åh, jeg glæder mig så meget."
-1,"Åh, jeg glæder mig."
+"1,""Åh, jeg glæder mig meget."""
+"1,""Åh, jeg glæder mig så meget!"""
+"1,""Åh, jeg glæder mig så meget."""
+"1,""Åh, jeg glæder mig."""
 1,Årh jeg knus-elsker ham!
 2,Danmark kan ikke redde hele jorden.
 2,De er sure.
@@ -233,25 +233,25 @@ variable,value
 2,Det bliver bare kedeligt.
 2,Det bliver kedeligt.
 2,Det er altså ikke praktisk med toget
-2,"Det er bare gået så skidt, og ingen er tilfredse eller begejstrede."
+"2,""Det er bare gået så skidt, og ingen er tilfredse eller begejstrede."""
 2,Det er bare ikke altid særlig godt.
 2,Det er bare ikke skønt.
 2,Det er bekymrende.
-2,"Det er da ikke det jeg skal have, mand."
+"2,""Det er da ikke det jeg skal have, mand."""
 2,Det er da ikke fornuftigt.
 2,Det er da ikke skønt.
 2,Det er da klart når personalet har fingrene i kagedåsen.
 2,Det er da lidt ufornuftigt.
 2,Det er det værste jeg har hørt om.
-2,"Det er ikke den udvikling, jeg går i gennem."
-2,"Det er ikke det bedste, jeg har set."
-2,"Det er ikke det jeg skal have, mand."
+"2,""Det er ikke den udvikling, jeg går i gennem."""
+"2,""Det er ikke det bedste, jeg har set."""
+"2,""Det er ikke det jeg skal have, mand."""
 2,Det er ikke det jeg skal have.
 2,Det er ikke en god ide.
 2,Det er ikke en klassiker.
 2,Det er ikke en mulighed.
 2,Det er ikke en ære at komme i sådan et selskab.
-2,"Det er ikke et fantastik udgangspunkt, hvis vi skal styrke børns læselyst."
+"2,""Det er ikke et fantastik udgangspunkt, hvis vi skal styrke børns læselyst."""
 2,Det er ikke et spændende eksperiment.
 2,Det er ikke fornuftigt.
 2,Det er ikke genialt!
@@ -275,7 +275,7 @@ variable,value
 2,Det flyder stadig med plastic.
 2,Det forstår jeg ikke.
 2,Det første år havde jeg det svært med at komme her.
-2,"Det går alt for vidt, når man som ansat på et institut får en sådan opfordring af en leder."
+"2,""Det går alt for vidt, når man som ansat på et institut får en sådan opfordring af en leder."""
 2,Det havde jeg da helt glemt.
 2,Det havde jeg glemt alt om.
 2,Det havde jeg glemt.
@@ -296,7 +296,7 @@ variable,value
 2,Det skal vi ikke se.
 2,Det smager dårligt.
 2,Det var da lige godt groft.
-2,"Det var der nogle i forsamlingen, der følte sig krænket."
+"2,""Det var der nogle i forsamlingen, der følte sig krænket."""
 2,Det var dumt sagt.
 2,Det var ikke det her jeg mente!
 2,Det var ikke en succes!
@@ -320,18 +320,18 @@ variable,value
 2,Du hoster meget i dag.
 2,Du kan ikke se tilbage på det seneste år med stolthed!
 2,Du kan tro nej!
-2,"Ej, hvor gør det ondt."
+"2,""Ej, hvor gør det ondt."""
 2,Flere biler er kørt sammen.
 2,Folk er ikke fulde af kærlighed.
 2,Folk er ikke glade.
 2,Folk har travlt.
 2,Fuck hvor er det bare ikke sjovt.
 2,Fuck hvor er det ikke sjovt.
-2,"Glæder mig ikke til, vi skal afsted igen."
-2,"Gud ja, det havde jeg da glemt."
-2,"Gud ja, det havde jeg glemt."
-2,"Gud ja, det havde jeg helt glemt."
-2,"Gud nej, det havde jeg helt glemt."
+"2,""Glæder mig ikke til, vi skal afsted igen."""
+"2,""Gud ja, det havde jeg da glemt."""
+"2,""Gud ja, det havde jeg glemt."""
+"2,""Gud ja, det havde jeg helt glemt."""
+"2,""Gud nej, det havde jeg helt glemt."""
 2,Han er lidt vred.
 2,Han er vred!
 2,Han er vred.
@@ -342,16 +342,16 @@ variable,value
 2,Hvor gør I det skidt.
 2,I dag er de ikke gode venner.
 2,I dag er de ikke venner.
-2,"I virkeligheden elsker jeg ikke min bil, og jeg elsker ikke at køre i den."
-2,"Ingen kan være i tvivl om, at det ikke er fortjent"
+"2,""I virkeligheden elsker jeg ikke min bil, og jeg elsker ikke at køre i den."""
+"2,""Ingen kan være i tvivl om, at det ikke er fortjent"""
 2,Jeg blev en smule skuffet.
 2,Jeg blev ikke færdig i går.
 2,Jeg bliver ikke høj af det.
 2,Jeg endte tit med at sidde inde på kontoret og tude.
 2,Jeg er en smule forvirret.
 2,Jeg er forvirret.
-2,"Jeg er glad for, at de ikke kom i dag."
-2,"Jeg er i tvivl om, at de besøgende turister er begejstret."
+"2,""Jeg er glad for, at de ikke kom i dag."""
+"2,""Jeg er i tvivl om, at de besøgende turister er begejstret."""
 2,Jeg er ikke færdig.
 2,Jeg er målløs.
 2,Jeg er stadig målløs
@@ -365,40 +365,40 @@ variable,value
 2,Jeg har ikke købt billetter.
 2,Jeg havde forventet mere.
 2,Jeg havde ikke forventet mere.
-2,"Jeg håber virkelig ikke, at vi vinder prisen."
+"2,""Jeg håber virkelig ikke, at vi vinder prisen."""
 2,Jeg kan ikke genkende dig.
 2,Jeg kan ikke høre det.
 2,Jeg kan ikke lide at tale med dem.
 2,Jeg kan ikke se det for mig!
 2,Jeg kan ikke se pointen med det.
-2,"Jeg kan mærke, at det er alt for længe siden."
-2,"Jeg kan mærke, at det er for længe siden."
-2,"Jeg kan mærke, at det er længe siden."
-2,"Jeg kan mærke, at det ikke er for længe siden."
-2,"Jeg kan mærke, at det ikke er længe siden."
+"2,""Jeg kan mærke, at det er alt for længe siden."""
+"2,""Jeg kan mærke, at det er for længe siden."""
+"2,""Jeg kan mærke, at det er længe siden."""
+"2,""Jeg kan mærke, at det ikke er for længe siden."""
+"2,""Jeg kan mærke, at det ikke er længe siden."""
 2,Jeg kunne beskrive det bedere.
 2,Jeg stemmer på dig.
-2,"Jeg synes ikke, det er fint."
-2,"Jeg synes ikke, det er godt."
-2,"Jeg synes ikke, du skal ønske dig det her."
-2,"Jeg synes, det er intellektuelt dovent og uinteressant."
-2,"Jeg synes, talen er så forvrænget en udgave af virkeligheden og faktuelt fuldstændig forkert."
+"2,""Jeg synes ikke, det er fint."""
+"2,""Jeg synes ikke, det er godt."""
+"2,""Jeg synes ikke, du skal ønske dig det her."""
+"2,""Jeg synes, det er intellektuelt dovent og uinteressant."""
+"2,""Jeg synes, talen er så forvrænget en udgave af virkeligheden og faktuelt fuldstændig forkert."""
 2,Jeg tog fejl.
 2,Jeg tror ikke du har forstået det.
-2,"Jeg tror ikke, jeg fortsætter."
+"2,""Jeg tror ikke, jeg fortsætter."""
 2,Jeg tænker ikke på dig.
 2,Jeg vil bestemt ikke prøve den løsning næste gang.
 2,Jeg vil ikke prøve den løsning næste gang.
 2,Kommunikationen til passagererne skal klart forbedres.
 2,Kufferten var ikke så stor en succes.
-2,"Kæft, det er bare ikke sejt."
-2,"Kæft, det er ikke sejt."
+"2,""Kæft, det er bare ikke sejt."""
+"2,""Kæft, det er ikke sejt."""
 2,Lørdagens kamp var ikke vigtig for os.
 2,Maden er for stærk.
 2,Man bliver nødt til at spille med åbne kort.
-2,"Man tager dog fejl, hvis man tror, at det ikke er farligt."
+"2,""Man tager dog fejl, hvis man tror, at det ikke er farligt."""
 2,Mor er ikke den bedste i verden.
-2,"Nej, nu er det for meget!"
+"2,""Nej, nu er det for meget!"""
 2,Nogle gange forvirrer du mig altså.
 2,Nogle gange forvirrer du mig.
 2,Ordene skulle ikke føles lette i munden.
@@ -415,30 +415,30 @@ variable,value
 2,Vi er ikke godt på vej.
 2,Vi er ikke nødt til at have sandheden.
 2,Vi er ikke til at regne med.
-2,"Vi fik ikke lagt den energi i det, som vi ville."
-2,"Vi glæder os ikke til den tid, vi går i møde."
+"2,""Vi fik ikke lagt den energi i det, som vi ville."""
+"2,""Vi glæder os ikke til den tid, vi går i møde."""
 2,Vi har ikke weekend!
 2,Vi har ikke weekend.
 2,Vi kan ikke den dag.
 2,Vi kan ikke vinde!
 2,Vi kan ikke vinde.
-2,"Vi må gøre op, om vi vil det til næste år."
+"2,""Vi må gøre op, om vi vil det til næste år."""
 2,Vi skruer op for støjen.
 2,Vores udstilling er ikke enestående.
-3,"Maden var god, men betjeningen var elendig."
-3,"Jeg tror ikke, hun har forstået det, men hun klarede det nu meget godt."
-3,"Jeg ville have stået op hele tiden, men jeg blev træt halvvejs og satte mig ned."
-3,"Han kunne godt have givet en hånd med, men han havde ikke lyst."
-3,"Det tror jeg ikke på, men jeg har ikke en bedre forklaring selv."
-3,"Jeg havde det super sjovt, men så blev jeg syg."
-3,"Der var beskidt, men vi havde det godt."
-3,"Han kan hoppe højt, men han kan ikke løbe særlig hurtigt."
-3,"Jeg er blank, men du har nogle gode idéer."
-3,"Før var du sjov, nu er du bare dum at høre på!!"
-3,"Han er lidt dum, men han er også lidt sød."
-3,"Før var det okay, men nu er det for galt."
+"3,""Maden var god, men betjeningen var elendig."""
+"3,""Jeg tror ikke, hun har forstået det, men hun klarede det nu meget godt."""
+"3,""Jeg ville have stået op hele tiden, men jeg blev træt halvvejs og satte mig ned."""
+"3,""Han kunne godt have givet en hånd med, men han havde ikke lyst."""
+"3,""Det tror jeg ikke på, men jeg har ikke en bedre forklaring selv."""
+"3,""Jeg havde det super sjovt, men så blev jeg syg."""
+"3,""Der var beskidt, men vi havde det godt."""
+"3,""Han kan hoppe højt, men han kan ikke løbe særlig hurtigt."""
+"3,""Jeg er blank, men du har nogle gode idéer."""
+"3,""Før var du sjov, nu er du bare dum at høre på!!"""
+"3,""Han er lidt dum, men han er også lidt sød."""
+"3,""Før var det okay, men nu er det for galt."""
 4,Maden var god.
-4,"Jeg tror ikke, hun har forstået det."
+"4,""Jeg tror ikke, hun har forstået det."""
 4,Jeg ville have stået op hele tiden.
 4,Han kunne godt have givet en hånd med.
 4,Det tror jeg ikke på.
@@ -460,7 +460,7 @@ variable,value
 5,Nu er du bare dum at høre på!!
 5,Han er også lidt sød.
 6,Du er måske udmattet af hverdagen?
-6,"Er der noget personligt, som du ikke har haft tid til?"
+"6,""Er der noget personligt, som du ikke har haft tid til?"""
 6,Er der overhovedet nogen der gider?
 6,Er det dig skat?
 6,Er det ikke mere praktisk at flyve?
@@ -475,12 +475,12 @@ variable,value
 6,Har du ikke lyst til en gang frokost?
 6,Har du tid til en kop kaffe?
 6,Har du viljestyrke og charme tilovers?
-6,"Hej, hvad kan jeg gøre for dig?"
+"6,""Hej, hvad kan jeg gøre for dig?"""
 6,Holder han ikke snart op?
 6,Hvad er dit mål?
 6,Hvad koster det?
 6,Hvad mener du?
-6,"Hvad siger du til, at snuppe en øl med mig?"
+"6,""Hvad siger du til, at snuppe en øl med mig?"""
 6,Hvad skal dette ikke til for?
 6,Hvad skal du i dag?
 6,Hvad skal vi høre nu?
@@ -490,8 +490,8 @@ variable,value
 6,Hvem er stadig tilbage?
 6,Hvem har flyttet den?
 6,Hvem kunne tænke sig at hjælpe til?
-6,"Hvem tror du, du er?"
-6,"Hvis du ikke kan forstå mine beskeder, kan du så forstå denne?"
+"6,""Hvem tror du, du er?"""
+"6,""Hvis du ikke kan forstå mine beskeder, kan du så forstå denne?"""
 6,Hvor blev du af?
 6,Hvor er min præmie?
 6,Hvordan har du det?
@@ -503,7 +503,7 @@ variable,value
 6,Men hvordan gør vi bedst det?
 6,Skulle det nu også være kunst?
 6,Spiller de stadig?
-6,"Synes du ikke også at tiden flyver af sted, når man har det sjovt?"
+"6,""Synes du ikke også at tiden flyver af sted, når man har det sjovt?"""
 6,Tror du ikke på mig?
 6,Var det sådan du havde det?
 6,Vil du ikke nok lade være?
@@ -516,7 +516,7 @@ variable,value
 6,Kan du huske den?
 7,De spiller stadig.
 7,Den er blevet flyttet.
-7,"Der er noget personligt, som du ikke har haft tid til."
+"7,""Der er noget personligt, som du ikke har haft tid til."""
 7,Der er overhovedet ikke nogen der gider.
 7,Det er dig skat.
 7,Det er dit mål.
@@ -540,7 +540,7 @@ variable,value
 7,Du kan gøre plads til mere leg og kreativitet.
 7,Du kommer i morgen.
 7,Du snupper en øl med mig.
-7,"Du synes også at tiden flyver af sted, når man har det sjovt."
+"7,""Du synes også at tiden flyver af sted, når man har det sjovt."""
 7,Du tror ikke på mig.
 7,Du vil ikke lade være.
 7,Han holder op.
@@ -563,23 +563,23 @@ variable,value
 7,Du vil ikke lave det.
 7,Du kan huske den.
 7,Du kan ikke huske den.
-8,"Der er faktisk mange ældre, der heller ikke taler så kønt, og de lægger nok ikke altid mærke til det selv."
-8,"Det er trist, når de helt små børn siger ord, de ikke selv forstår."
-8,"Det er vokset hvert år, så jeg er da spændt på, hvor mange der kommer i år"
+"8,""Der er faktisk mange ældre, der heller ikke taler så kønt, og de lægger nok ikke altid mærke til det selv."""
+"8,""Det er trist, når de helt små børn siger ord, de ikke selv forstår."""
+"8,""Det er vokset hvert år, så jeg er da spændt på, hvor mange der kommer i år"""
 8,Dit humør og din livskvalitet bliver også påvirket
-8,"Havde han ikke haft den tro på mig og mine evner, havde jeg aldrig troet, at det ville være en reel mulighed for mig"
-8,"Hun er ikke i tvivl om, at det er opbakningen, som har fået hende på rette spor."
-8,"Hun havde en god og tryg opvækst i barndommen, men som 12-13 årig havnede hun i det forkerte selskab."
-8,"Jeg afprøvede en drøm om at blive tatovør, men det skulle ikke være mig lige nu."
+"8,""Havde han ikke haft den tro på mig og mine evner, havde jeg aldrig troet, at det ville være en reel mulighed for mig"""
+"8,""Hun er ikke i tvivl om, at det er opbakningen, som har fået hende på rette spor."""
+"8,""Hun havde en god og tryg opvækst i barndommen, men som 12-13 årig havnede hun i det forkerte selskab."""
+"8,""Jeg afprøvede en drøm om at blive tatovør, men det skulle ikke være mig lige nu."""
 8,Jeg har forsøgt at få den idé ud i verden
-8,"Jeg synes nu alligevel, at vi skulle tage og prøve."
-8,"Jeg synes personligt det er brænd ærgerligt, hvis vi ikke får en afstemning."
-8,"Jeg synes, det er helt vidunderligt og glæder mig MEGET over alt det skønne og humørfyldte, der er dukket frem i byen gennem de senere år."
-8,"Jeg tror, at vi tog fejl."
+"8,""Jeg synes nu alligevel, at vi skulle tage og prøve."""
+"8,""Jeg synes personligt det er brænd ærgerligt, hvis vi ikke får en afstemning."""
+"8,""Jeg synes, det er helt vidunderligt og glæder mig MEGET over alt det skønne og humørfyldte, der er dukket frem i byen gennem de senere år."""
+"8,""Jeg tror, at vi tog fejl."""
 8,Man kunne have udfordret denne holdning.
-8,"Nu er det også de helt små børn, der begynder at sige grimme ord, uden at de kender betydningen af ordene."
-8,"Når alle udgifter og indtægter er gjort op, viser budgetopfølgningen, at året forventes at slutte med god balance i regnskabet."
+"8,""Nu er det også de helt små børn, der begynder at sige grimme ord, uden at de kender betydningen af ordene."""
+"8,""Når alle udgifter og indtægter er gjort op, viser budgetopfølgningen, at året forventes at slutte med god balance i regnskabet."""
 8,Så er det jo lige meget med alle mine stavefejl.
 8,Du burde gøre mere end at blande dig.
-8,"Det var det, vi snakkede om."
+"8,""Det var det, vi snakkede om."""
 8,Du burde gøre mere end bare at blande dig.
