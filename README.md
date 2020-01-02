@@ -26,6 +26,8 @@ For questions and commercial use, please contact:
 #### SOKRATES
 A new domain general validation dataset called SOKRATES that exceeds current validation methods in both complexity and quality, created with a proprietary advanced, adaptive tool for supervised machine learning data collection utilizing a citizen science approach.  It consists of a large amount of coders with a wide demographic representation and sentences scored in a four-dimensional emotional circumplex space that allows for future multidimensional, fine-grained machine learning based Danish sentiment analysis (SA).
 
+If you are Danish, you can help improve the tool by rating the sentences or sharing the form (it updates with new sentences for every trial): https://forms.gle/rhGmE8QZRQpp74WNA
+
 #### Sentida V2
 Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, SOKraTES). 
 
