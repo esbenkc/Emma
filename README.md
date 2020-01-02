@@ -16,12 +16,10 @@ Created by Søren Orm and Esben Kran.
 For questions and commercial use, please contact:
 * Esben Kran C.
   * contact@esbenkc.com
-  * Aarhus University
-  * [CINeMa](https://inema.webflow.io)
+  * Aarhus University, [CINeMa](https://inema.webflow.io)
 * Søren Orm H.
   * sorenorm@live.dk
-  * Aarhus University
-  * [CINeMa](https://inema.webflow.io)
+  * Aarhus University, [CINeMa](https://inema.webflow.io)
 
 #### SOKRATES
 A new domain general validation dataset called SOKRATES that exceeds current validation methods in both complexity and quality, created with a proprietary advanced, adaptive tool for supervised machine learning data collection utilizing a citizen science approach.  It consists of a large amount of coders with a wide demographic representation and sentences scored in a four-dimensional emotional circumplex space that allows for future multidimensional, fine-grained machine learning based Danish sentiment analysis (SA).
