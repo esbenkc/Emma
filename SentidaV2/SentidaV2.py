@@ -765,23 +765,9 @@ def sentidaV2_examples():
     print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
     # 'Men' ('but'):  -1.5
 
-#print('Sentida er fint nok, men har du set SOKRATES?')
-#print(sentida('Sentida er fint nok, men har du set SOKRATES?'))
-#print('Sentida er fint nok, men har du ikke set SOKRATES?')
-#print(sentida('Sentida er fint nok, men har du ikke set SOKRATES?'))
-#print('Jeg havde det ikke særlig godt i går, men i dag går det fantastisk!')
-#print(sentida('Jeg havde det ikke særlig godt i går, men i dag går det fantastisk!'))
-#print('Jeg havde det ikke særlig godt i går, MEN I DAG HAR JEG DET FANTASTISK!')
-#print(sentida('Jeg havde det ikke særlig godt i går, MEN I DAG HAR JEG DET FANTASTISK!'))
-#print(sentida('Jeg kan ikke se, hvorfor det skulle være en forbedring, MEN DET FUNGERER!'))
-#print(sentida('Jeg kan ikke se, hvorfor det skulle være en forbedring, men det fungerer.'))
-#print(sentida('Jeg elsker dig'))
-#print(sentida('Jeg hader dig'))
-#print(sentida('du er flot'))
-#print(sentida('du er grim'))
-#
-#Still missing: common phrases, adjusted values for exclamation marks,
-#adjusted values for men-sentences, adjusted values for capslock,
-#more rated words, more intensifiers/mitigators, better solution than snowball stemmer,
-#synonym/antonym dictionary.
-#Social media orientated: emojicons, using multiple letters - i.e. suuuuuper.
+
+# Still missing: common phrases, adjusted values for exclamation marks,
+# adjusted values for men-sentences, adjusted values for capslock,
+# more rated words, more intensifiers/mitigators, better solution than snowball stemmer,
+# synonym/antonym dictionary.
+# Social media orientated: emojicons, using multiple letters - i.e. suuuuuper.
