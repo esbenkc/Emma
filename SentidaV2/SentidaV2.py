@@ -22,16 +22,8 @@ The tool will be updated as more data is collected and new methods for more opti
 '''
 
 # VADER imports
-import codecs
-import json
-import math
-import os
-import re
-import string
-from inspect import getsourcefile
-from io import open
-from itertools import product
 
+import numpy as np
 import pandas as pd
 from nltk.stem import SnowballStemmer
 
@@ -83,11 +75,7 @@ SPECIAL_CASE_IDIOMS = {}
 ####################
 
 """
-Initialize a SentimentIntensityAnalyzer object to
-begin analysis of your corpus. E.g:
-
-analyzer = SentimentIntensityAnalyzer()
-analyzer.polarity_scores(text)
+sentidaV2(text)
 
 """
 
@@ -173,31 +161,21 @@ def caps_modifier(sentiments, words):
     return sentiments
 # VADER: 1.733
 
-# Function for identifying negations in a list of words:
-def negator(words):
-    position = []
+# Function for identifying negations in a list of words. Returns list of positions affected by negator.
+def get_negator_affected(words):
+    positions = []
 
     for word in words:
         if word in NEGATE:
             neg_pos = words.index(word)
+            positions.append(neg_pos)
+            positions.append(neg_pos + 1)
+            positions.append(neg_pos - 1)
+            positions.append(neg_pos + 2)
+            positions.append(neg_pos + 3)
+    return positions
 
-            if neg_pos not in position:
-                position.append(neg_pos)
-
-            if neg_pos + 1 not in position:
-                position.append(neg_pos + 1)
-
-            if neg_pos - 1 not in position:
-                position.append(neg_pos - 1)
-
-            if neg_pos + 2 not in position:
-                position.append(neg_pos + 2)
-
-            if neg_pos + 3 not in position:
-                position.append(neg_pos + 3)
-
-    return position
-
+# Get all intensifiers
 def get_intensifier(sentiments, word_list):
     intensifiers_df = intensifier.loc[intensifier['stem'].isin(word_list)]
     intensifiers = intensifiers_df['stem'].tolist()
@@ -207,10 +185,6 @@ def get_intensifier(sentiments, word_list):
     for word in word_list:
         if word in intensifiers:
             inten_pos = word_list.index(word)
-
-            if inten_pos not in position:
-                position.append(inten_pos)
-                sentiments[inten_pos] *= scores[intensifiers.index(word)]
 
             if inten_pos + 1 not in position:
                 position.append(inten_pos + 1)
@@ -235,7 +209,7 @@ def get_intensifier(sentiments, word_list):
     return sentiments
 
 
-#function for identifying 'men' (but) in a list of words:
+# Function for identifying 'men' (but) in a list of words:
 def men_identifier(words):
     position = 0
 
@@ -244,8 +218,6 @@ def men_identifier(words):
             position = words.index(word)
 
     return position
-# Giver det mening at have sætninger med flere men'er i?
-# Potentielt kan det have en effekt ja, men det bliver måske først senere
 
 
 # Function for modifying the sentiment score according to whether the words are before or after the word 'men' (but) in a list of words
@@ -257,7 +229,7 @@ def men_sentiment(sentiments, words):
             sentiments[i] *= 1.5
 
     return sentiments
-# We need imperical tested weights for the part before and after the 'men's'
+# Need imperical tested weights for the part before and after the 'men's'
 
 
 # Function for stemming the words of a sentence (stemming is NOT optimal for expanding the vocabulary!):
@@ -297,7 +269,7 @@ def sentidaV2(sentence, output = ["mean", "total"]):
     sentiments = caps_modifier(sentiments, words_caps)
 
     if question_identifier(sentence) == 0:
-        for i in negator(words_lower):
+        for i in set(get_negator_affected(words_lower)):
             if i < len(sentiments) and i >= 0:
                 sentiments[i] *= -1
 
@@ -332,7 +304,15 @@ def sentidaV2_examples():
 
 
 # Still missing: common phrases, adjusted values for exclamation marks,
-# adjusted values for men-sentences, adjusted values for capslock,
-# more rated words, more intensifiers/mitigators, better solution than snowball stemmer,
-# synonym/antonym dictionary.
-# Social media orientated: emojicons, using multiple letters - i.e. suuuuuper.
+# Adjusted values for men-sentences, adjusted values for capslock,
+# More rated words, more intensifiers/mitigators, better solution than snowball stemmer,
+# Synonym/antonym dictionary.
+# Social media orientated: emoticons, using multiple letters - i.e. suuuuuper.
+
+
+
+##################################
+### CUSTOM FUNCTIONS OPTIMIZED ###
+##################################
+
+def sentidaV2_dictonly (text):
