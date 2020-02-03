@@ -38,11 +38,11 @@ If you use either the dataset or any of the Sentida V2 sentiment analysis tool i
 ### Descriptions of folders
 All data is in .csv format in UTF-8 encoding.
 * Emma
-    Includes the SOKRATES validation dataset with all scorings given by coders as well as all 584 texts scored.
+    Includes the Emma validation dataset with all scorings given by coders as well as all 584 texts scored.
 * Sentida V2
     Includes the python implementation as well as aarup.csv and intensifier.csv that are from Sentida (Lauridsen, Dalsgaard, & Svendsen, 2019). The python implementation is built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
 * Tests
-    Includes the thousands of logistic tests performed for each tool (V2, V1, AFINN, and uPS) on each dataset (TP, TP2, SOKRATES) and a summary of the results.
+    Includes the thousands of logistic tests performed for each tool (V2, V1, AFINN, and uPS) on each dataset (TP, TP2, Emma) and a summary of the results.
 * Validation datasets
     Includes TP.csv and TP2.csv used in the paper and previous studies (Lauridsen et al., 2019)
 
