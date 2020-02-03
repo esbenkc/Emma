@@ -1,8 +1,9 @@
-# SOKRATES Sentiment Analysis Validation Dataset for Danish
-SOKRATES (Søren Orm and KRAn's Test for Emotional Sentiment) is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
+# Emma: Emotional Multidimensional Analysis
+#### Sentiment Analysis Validation Dataset for Danish
+Emma is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
 - [Introduction](#introduction)
 - [Citation](#citing-this-work)
-- [SOKRATES](#sokrates)
+- [Emma](#emma)
 - [Sentida V2](#sentida-v2)
 - [Descriptions of resources](#descriptions-of-folder)
 - [Installation](#installation)
@@ -10,7 +11,7 @@ SOKRATES (Søren Orm and KRAn's Test for Emotional Sentiment) is a validation da
 ### Introduction
 #### Context
 Created by Søren Orm and Esben Kran.
-> SOKRATES: The new State-of-the-Art in Danish Sentiment Analysis and a Multidimensional Emotional Sentiment Validation Dataset
+> Emma: Danish Computational Analysis of Emotion in Text
 > (by S. Orm and E. Kran)
 
 For questions and commercial use, please contact:
@@ -21,13 +22,13 @@ For questions and commercial use, please contact:
   * sorenorm@live.dk
   * Aarhus University, [CINeMa](https://inema.webflow.io)
 
-#### SOKRATES
-A new domain general validation dataset called SOKRATES that exceeds current validation methods in both complexity and quality, created with a proprietary advanced, adaptive tool for supervised machine learning data collection utilizing a citizen science approach.  It consists of a large amount of coders with a wide demographic representation and sentences scored in a four-dimensional emotional circumplex space that allows for future multidimensional, fine-grained machine learning based Danish sentiment analysis (SA).
+#### Emma
+A new domain general validation dataset called Emma that exceeds current validation methods in both complexity and quality, created with a proprietary advanced, adaptive tool for supervised machine learning data collection utilizing a citizen science approach.  It consists of a large amount of coders with a wide demographic representation and sentences scored in a four-dimensional emotional circumplex space that allows for future multidimensional, fine-grained machine learning based Danish sentiment analysis (SA).
 
 If you are Danish, you can help improve the tool by rating the sentences or sharing the form (it updates with new sentences for every trial): https://forms.gle/rhGmE8QZRQpp74WNA
 
 #### Sentida V2
-Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, SOKraTES). 
+Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma). 
 
 Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
 
@@ -36,7 +37,7 @@ If you use either the dataset or any of the Sentida V2 sentiment analysis tool i
 
 ### Descriptions of folders
 All data is in .csv format in UTF-8 encoding.
-* SOKRATES
+* Emma
     Includes the SOKRATES validation dataset with all scorings given by coders as well as all 584 texts scored.
 * Sentida V2
     Includes the python implementation as well as aarup.csv and intensifier.csv that are from Sentida (Lauridsen, Dalsgaard, & Svendsen, 2019). The python implementation is built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
