@@ -314,5 +314,3 @@ def sentidaV2_examples():
 ##################################
 ### CUSTOM FUNCTIONS OPTIMIZED ###
 ##################################
-
-def sentidaV2_dictonly (text):
