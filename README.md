@@ -55,20 +55,107 @@ SentidaV2 ( character, output = ["mean", "total"] )
 ```
 Usage examples:
 ```
-print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
-# Example of usage: 2.0
-print("With exclamation mark: ", sentidaV2("Lad der blive fred!", output = "mean"))
-# With exclamation mark: 3.13713
-print("With several exclamation mark: ", sentidaV2("Lad der blive fred!!!", output = "mean"))
-# With several exclamation mark:  3.7896530399999997
-print("Uppercase: ", sentidaV2("Lad der BLIVE FRED", output = "mean"))
-# Uppercase:  3.466
-print("Negative sentence: ", sentidaV2("Det går dårligt.", output = "mean"))
-# With exclamation mark:  -1.8333333333333335
-print("Negation in sentence: ", sentidaV2("Det går ikke dårligt.", output = "mean"))
-# Negation in sentence:  1.8333333333333335
-print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
-# 'Men' ('but'):  -1.5
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred.', 
+        output = 'mean', 
+        normal = False)
+
+Example of usage:
+Lad der bliver fred
+Sentiment =  2.0 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred!', 
+        output = 'mean', 
+        normal = False)
+
+With exclamation mark:
+Lad der blive fred!
+Sentiment =  3.13713 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred!!!', 
+        output = 'mean', 
+        normal = False)
+
+With several exclamation mark:
+Lad der blive fred!!!
+Sentiment =  3.7896530399999997 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der BLIVE FRED', 
+        output = 'mean', 
+        normal = False)
+
+Uppercase:
+lad der BLIVE FRED
+Sentiment =  3.466 
+_____________________________
+
+sentidaV2(
+        text = 'Det går dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+Negative sentence:
+Det går dårligt
+Sentiment =  -1.8333333333333335 
+_____________________________
+
+sentidaV2(
+        text = 'Det går ikke dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+Negation in sentence:
+Det går ikke dårligt
+Sentiment =  1.8333333333333335 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred, men det går dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+'Men' ('but'):
+Lad der blive fred, men det går dårligt
+Sentiment =  -1.5 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred.', 
+        output = 'mean', 
+        normal = True)
+
+Normalized:
+Lad der blive fred
+Sentiment =  0.4 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der bliver fred. Det går dårligt!', 
+        output = 'by_sentence_mean', 
+        normal = False)
+
+Multiple sentences mean:
+Lad der bliver fred. Det går dårligt!
+Sentiments = [2.0, -2.8757025] 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der bliver fred. Det går dårligt!', 
+        output = 'by_sentence_total', 
+        normal = False)
+
+Multiple sentences total:
+Lad der bliver fred. Det går dårligt!
+Sentiments = [2.0, -5.751405] 
+_____________________________
 ```
 ### References
 Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38–53.
