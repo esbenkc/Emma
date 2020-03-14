@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # Author: CINeMa - SOHa and E. KranC
-# Thanks to CINeMa (https://inema.webflow.io),
-# the Sentida team, jry, VADER, AFINN, and last
-# but not least Formula T., for inspiration and encouragement.
-# For license information, see LICENSE.TXT
 
-"""
+'''
+Thanks to CINeMa (https://inema.webflow.io),
+the Sentida team, jry, VADER, AFINN, and last
+but not least Formula T., for inspiration and encouragement.
+For license information, see LICENSE.TXT
+
 The SentidaV2 sentiment analysis tool is freely available for
 research purposes (please cite). If you want to use the tool
 for commercial purposes, please contact:
@@ -17,8 +18,9 @@ Aarhus University, Cognitive Science.
 2019 - Cognition & Communication.
 @authors: soha & kranc.
 
-This script was developed along with other tools in an attempt to improve danish sentiment analysis.
-The tool will be updated as more data is collected and new methods for more optimally accessing sentiment is developed.
+This script was developed along with other tools in an attempt to improve 
+danish sentiment analysis. The tool will be updated as more data is collected 
+and new methods for more optimally accessing sentiment is developed.
 
 ________________________________________________________________________________________
 
@@ -42,12 +44,12 @@ ________________________________________________________________________________
 FUTURE IMPROVEMENTS
 
 Still missing: common phrases, adjusted values for exclamation marks,
-Adjusted values for men-sentences, adjusted values for capslock,
+Adjusted values for men-sentences, adjusted values for uppercase,
 More rated words, more intensifiers/mitigators, better solution than snowball stemmer,
 Synonym/antonym dictionary.
 Social media orientated: emoticons, using multiple letters - i.e. suuuuuper.
 Normalization with respect to sub-(-1) and super-(1) output values
-_____________________________________________________________________________________"""
+_____________________________________________________________________________________'''
 
 #################
 ### LIBRARIES ###
@@ -92,14 +94,112 @@ SENTIMENT_LADEN_IDIOMS = {}
 
 SPECIAL_CASE_IDIOMS = {}
 
-####################
-### INSTRUCTIONS ###
-####################
+#####################
+### DOCUMENTATION ###
+#####################
 
 """
-sentidaV2("Lad der blive fred!", output = ["mean", "total", "by_sentence_mean", 
-"by_sentence_total"], normal = FALSE)
-    # 3.13713
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred.', 
+        output = 'mean', 
+        normal = False)
+
+Example of usage:
+Lad der bliver fred
+Sentiment =  2.0 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred!', 
+        output = 'mean', 
+        normal = False)
+
+With exclamation mark:
+Lad der blive fred!
+Sentiment =  3.13713 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred!!!', 
+        output = 'mean', 
+        normal = False)
+
+With several exclamation mark:
+Lad der blive fred!!!
+Sentiment =  3.7896530399999997 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der BLIVE FRED', 
+        output = 'mean', 
+        normal = False)
+
+Uppercase:
+lad der BLIVE FRED
+Sentiment =  3.466 
+_____________________________
+
+sentidaV2(
+        text = 'Det går dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+Negative sentence:
+Det går dårligt
+Sentiment =  -1.8333333333333335 
+_____________________________
+
+sentidaV2(
+        text = 'Det går ikke dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+Negation in sentence:
+Det går ikke dårligt
+Sentiment =  1.8333333333333335 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred, men det går dårligt.', 
+        output = 'mean', 
+        normal = False)
+
+'Men' ('but'):
+Lad der blive fred, men det går dårligt
+Sentiment =  -1.5 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der blive fred.', 
+        output = 'mean', 
+        normal = True)
+
+Normalized:
+Lad der blive fred
+Sentiment =  0.4 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der bliver fred. Det går dårligt!', 
+        output = 'by_sentence_mean', 
+        normal = False)
+
+Multiple sentences mean:
+Lad der bliver fred. Det går dårligt!
+Sentiments = [2.0, -2.8757025] 
+_____________________________
+
+sentidaV2(
+        text = 'Lad der bliver fred. Det går dårligt!', 
+        output = 'by_sentence_total', 
+        normal = False)
+
+Multiple sentences total:
+Lad der bliver fred. Det går dårligt!
+Sentiments = [2.0, -5.751405] 
+_____________________________
 
 """
 
@@ -272,12 +372,12 @@ def get_sentiment(word_list):
 '''
 Function for turning a text input into a mean sentiment score.
 
-Architecture as following branching:
+Architecture as following tree:
     output: mean -> mean branch
         Analyzes the text as a single sentence
     output: total || by_sentence_mean || by_sentence_total
         Splits into sentences to analyze each as a single sentence
-        Splits branch into outputting for each
+        Splits branch into output branches
 
 '''
 def sentidaV2(text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = False):
@@ -285,13 +385,11 @@ def sentidaV2(text, output = ["mean", "total", "by_sentence_mean", "by_sentence_
     # Goes into sentence splitting if it's not the global mean output
     if output == "by_sentence_mean" or output == "by_sentence_total" or output == "total":
         sentences = nltk.sent_tokenize(text)
-        
         # The tokenizer splits !!! into two sentences if at the end of the text
         # Remove problem by analyzing, appending, and removing
         if sentences[-1] == "!": 
             sentences[-2] = sentences[-2] + "!"
             del sentences[-1]
-        print(sentences)
         sentences_output = []
         
         # Sentence splitting branch
@@ -387,13 +485,13 @@ def sentidaV2_examples():
         "Det går ikke dårligt.", output="mean"), "\n_____________________________")
     # Negation in sentence:  1.8333333333333335
     print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", sentidaV2(
-        "Lad der blive fred, men det går dårligt.", output="mean"), "\n_____________________________")
+        "Lad der blive fred, men det går dårligt.", output = "mean"), "\n_____________________________")
     # 'Men' ('but'):  -1.5
-    print("\n'Normalized:\nLad der blive fred\nSentiment = ", sentidaV2(
+    print("\nNormalized:\nLad der blive fred\nSentiment = ", sentidaV2(
         "Lad der blive fred.", output = "mean", normal = True), "\n_____________________________")
     # Normalized:  0.4
+    print("\nMultiple sentences mean:\nLad der bliver fred. Det går dårligt!\nSentiments =", sentidaV2("Lad der bliver fred. Det går dårligt!", "by_sentence_mean"), "\n_____________________________")
+    print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", sentidaV2("Lad der bliver fred. Det går dårligt!", "by_sentence_total"), "\n_____________________________")
+
 
 sentidaV2_examples()
-
-print(sentidaV2(text = "Lol, der fik jeg Dem, Jackson!!! Nu må vi lige høre på dataen i min numse. Bumselumse!!!!! Skatten skal findes!!!!", 
-                output = "by_sentence_mean"))
