@@ -397,9 +397,3 @@ sentidaV2_examples()
 
 print(sentidaV2(text = "Lol, der fik jeg Dem, Jackson!!! Nu må vi lige høre på dataen i min numse. Bumselumse!!!!! Skatten skal findes!!!!", 
                 output = "by_sentence_mean"))
-
-##################################
-### CUSTOM FUNCTIONS OPTIMIZED ###
-##################################
-
-# def sentidaV2_dictonly (text):
