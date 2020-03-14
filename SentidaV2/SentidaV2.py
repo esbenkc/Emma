@@ -5,7 +5,7 @@
 # but not least Formula T., for inspiration and encouragement.
 # For license information, see LICENSE.TXT
 
-'''
+"""
 The SentidaV2 sentiment analysis tool is freely available for
 research purposes (please cite). If you want to use the tool
 for commercial purposes, please contact:
@@ -19,24 +19,42 @@ Aarhus University, Cognitive Science.
 
 This script was developed along with other tools in an attempt to improve danish sentiment analysis.
 The tool will be updated as more data is collected and new methods for more optimally accessing sentiment is developed.
-'''
 
-# VADER imports
+________________________________________________________________________________________
 
-import numpy as np
-import pandas as pd
+VADER BASIS VALUES
+
+Multiplication values:
+    0.291, 0.215, and 0.208 for !, !!, and !!! respectively
+        empirically tested by one sentence compared to the three conditions
+    0.733 for uppercase 
+        empirically tested from single control sentence to uppercase version
+    0.293 for degree modifications from adverbs
+        empirically tested with "extremely"
+
+SENTIDA V2 basis values
+Currently using VADER basis values
+Question mark is: XXX
+Degree modifications for other words are implemented in intensitifer list
+    - Need implementation of larger intensifier list based on sentences
+________________________________________________________________________________________    
+
+FUTURE IMPROVEMENTS
+
+Still missing: common phrases, adjusted values for exclamation marks,
+Adjusted values for men-sentences, adjusted values for capslock,
+More rated words, more intensifiers/mitigators, better solution than snowball stemmer,
+Synonym/antonym dictionary.
+Social media orientated: emoticons, using multiple letters - i.e. suuuuuper.
+Normalization with respect to sub-(-1) and super-(1) output values
+_____________________________________________________________________________________"""
+
+#################
+### LIBRARIES ###
+#################
+
+import pandas as pd, nltk, numpy as np
 from nltk.stem import SnowballStemmer
-
-# VADER basis values
-# VADER shows 0.291, 0.215, and 0.208 for !, !!, and !!!
-# UPPERCASE is 0.733
-# Degree modification tests with EXTREMELY is 0.293 as empirical basis
-
-# SENTIDA V2 basis values
-# Currently using VADER basis values
-# Question mark is: XXX
-# Degree modifications for other words are implemented in intensitifer list
-#     - Need implementation of larger intensifier list based on sentences
 
 #################
 ### CONSTANTS ###
@@ -51,6 +69,10 @@ N_SCALAR = -0.74
 QM_MULT = 0.94
 QM_SUCC_MULT = 0.18
 
+EX_INTENSITY = [1.291, 1.215, 1.208]
+UP_INTENSITY = 1.733
+BUT_INTENSITY = [0.5, 1.5]
+
 N_TRIGGER = "no"
 
 NEGATE = \
@@ -64,7 +86,7 @@ BUT_DICT = \
 
 BOOSTER_DICT = \
     {"temmelig": 0.1, "meget": 0.2, "mega": 0.4, "lidt": -0.2, "ekstremt": 0.4,
-    "totalt": 0.2, "utrolig": 0.3, "rimelig": 0.1, "seriøst": 0.3}
+     "totalt": 0.2, "utrolig": 0.3, "rimelig": 0.1, "seriøst": 0.3}
 
 SENTIMENT_LADEN_IDIOMS = {}
 
@@ -75,15 +97,16 @@ SPECIAL_CASE_IDIOMS = {}
 ####################
 
 """
-sentidaV2(text)
+sentidaV2("Lad der blive fred!", output = ["mean", "total", "by_sentence_mean", 
+"by_sentence_total"], normal = FALSE)
+    # 3.13713
 
 """
 
 ##############################
 ### CUSTOM IMPLEMENTATIONS ###
+###     STATIC METHODS     ###
 ##############################
-    ### STATIC METHODS ###
-    ######################
 
 # Function for working around the unicode problem - shoutout to jry
 def fix_unicode(df_col):
@@ -94,17 +117,15 @@ aarup = pd.read_csv('aarup.csv', encoding='ISO-8859-1')
 intensifier = pd.read_csv('intensifier.csv', encoding='ISO-8859-1')
 intensifier['stem'] = fix_unicode(intensifier['stem'])
 
-
 # Function for modifing sentiment according to the number of exclamation marks:
 def exclamation_modifier(sentence):
-    ex_intensity = [1.291, 1.215, 1.208]
     ex_counter = sentence.count('!')
     value = 1
 #    if ex_counter > 3:
 #        ex_counter = 3
     if ex_counter == 0:
         return 1
-    for idx, m in enumerate(ex_intensity):
+    for idx, m in enumerate(EX_INTENSITY):
         if idx <= ex_counter:
             value *= m
     return value
@@ -118,50 +139,43 @@ def punct_cleaner(sentence):
     table = str.maketrans('!?-+_#.,;:\'\"', 12*' ')
     return sentence.translate(table)
 
-
 # Function for making letters lower case:
 def string_to_lower(sentence):
     return sentence.lower()
-
 
 # Function for splitting sentences by the spaces:
 def split_string(sentence):
     return sentence.split()
 
-
-# Function for removing punctuation from a sentence and turning it into a list of words
+# Function for removing punctuation from a sentence and turning it into a 
+# list of words
 def clean_words_caps(sentence):
     return split_string(punct_cleaner(sentence))
 
-
-# Function for removing punctuation from a sentence, making the letters lower case, and turning it into a list of words
+# Function for removing punctuation from a sentence, making the letters lower 
+# case, and turning it into a list of words
 def clean_words_lower(sentence):
     return split_string(string_to_lower(punct_cleaner(sentence)))
-
 
 # Function for getting the positions of words that are written in upper case:
 def caps_identifier(words):
     positions = []
-
     for word in words:
         if word.upper() == word:
             positions.append(words.index(word))
-
     return positions
 
-
-# Function for modifing the sentiment score of words that are written in upper case:
+# Function for modifing the sentiment score of words that are written in 
+# upper case:
 def caps_modifier(sentiments, words):
     positions = caps_identifier(words)
-
     for i in range(len(sentiments)):
         if i in positions:
-            sentiments[i] *= 1.733
-
+            sentiments[i] *= UP_INTENSITY
     return sentiments
-# VADER: 1.733
 
-# Function for identifying negations in a list of words. Returns list of positions affected by negator.
+# Function for identifying negations in a list of words. Returns list of 
+# positions affected by negator.
 def get_negator_affected(words):
     positions = []
 
@@ -189,17 +203,20 @@ def get_intensifier(sentiments, word_list):
             if inten_pos + 1 not in position:
                 position.append(inten_pos + 1)
                 if inten_pos + 1 < len(sentiments):
-                    sentiments[inten_pos + 1] *= scores[intensifiers.index(word)]
+                    sentiments[inten_pos +
+                               1] *= scores[intensifiers.index(word)]
 
             if inten_pos - 1 not in position:
                 position.append(inten_pos - 1)
                 if inten_pos - 1 > 0:
-                    sentiments[inten_pos - 1] *= scores[intensifiers.index(word)]
+                    sentiments[inten_pos -
+                               1] *= scores[intensifiers.index(word)]
 
             if inten_pos + 2 not in position:
                 position.append(inten_pos + 2)
                 if inten_pos + 2 < len(sentiments):
-                    sentiments[inten_pos + 2] *= scores[intensifiers.index(word)]
+                    sentiments[inten_pos +
+                               2] *= scores[intensifiers.index(word)]
 
             if inten_pos + 3 not in position:
                 position.append(inten_pos + 3)
@@ -212,33 +229,32 @@ def get_intensifier(sentiments, word_list):
 # Function for identifying 'men' (but) in a list of words:
 def men_identifier(words):
     position = 0
-
     for word in words:
         if word == 'men':
             position = words.index(word)
-
     return position
 
-
-# Function for modifying the sentiment score according to whether the words are before or after the word 'men' (but) in a list of words
+# Function for modifying the sentiment score according to whether the words are 
+# before or after the word 'men' (but) in a list of words
 def men_sentiment(sentiments, words):
     for i in range(len(sentiments)):
         if i < men_identifier(words):
-            sentiments[i] *= 0.5
+            sentiments[i] *= BUT_INTENSITY[0]
         else:
-            sentiments[i] *= 1.5
+            sentiments[i] *= BUT_INTENSITY[1]
 
     return sentiments
 # Need imperical tested weights for the part before and after the 'men's'
 
-
-# Function for stemming the words of a sentence (stemming is NOT optimal for expanding the vocabulary!):
+# Function for stemming the words of a sentence (stemming is NOT optimal for 
+# expanding the vocabulary!):
 def stemning(words):
     stemmer = SnowballStemmer('danish')
     return [stemmer.stem(word) for word in words]
 
 
-# Function that takes a list of words as the input and returns the corresponding sentiment scores
+# Function that takes a list of words as the input and returns the corresponding 
+# sentiment scores
 def get_sentiment(word_list):
     sentiment_df = aarup.loc[aarup['stem'].isin(word_list)]
     words = sentiment_df['stem'].tolist()
@@ -253,66 +269,137 @@ def get_sentiment(word_list):
 
     return senti_scores
 
+'''
+Function for turning a text input into a mean sentiment score.
 
+Architecture as following branching:
+    output: mean -> mean branch
+        Analyzes the text as a single sentence
+    output: total || by_sentence_mean || by_sentence_total
+        Splits into sentences to analyze each as a single sentence
+        Splits branch into outputting for each
 
-# Function for turning a sentence into a mean sentiment score:
-def sentidaV2(sentence, output = ["mean", "total"]):
-    words_caps = clean_words_caps(sentence)
-    words_lower = clean_words_lower(sentence)
-    stemmed = stemning(words_lower)
-    sentiments = get_sentiment(stemmed)
+'''
+def sentidaV2(text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = False):
+    
+    # Goes into sentence splitting if it's not the global mean output
+    if output == "by_sentence_mean" or output == "by_sentence_total" or output == "total":
+        sentences = nltk.sent_tokenize(text)
+        
+        # The tokenizer splits !!! into two sentences if at the end of the text
+        # Remove problem by analyzing, appending, and removing
+        if sentences[-1] == "!": 
+            sentences[-2] = sentences[-2] + "!"
+            del sentences[-1]
+        print(sentences)
+        sentences_output = []
+        
+        # Sentence splitting branch
+        for sent in sentences:
+            words_caps = clean_words_caps(sent)
+            words_lower = clean_words_lower(sent)
+            stemmed = stemning(words_lower)
+            sentiments = get_sentiment(stemmed)
+    
+            if men_identifier(words_lower) > 0:
+                sentiments = men_sentiment(sentiments, words_lower)
+        
+            sentiments = get_intensifier(sentiments, stemmed)
+            sentiments = caps_modifier(sentiments, words_caps)
+            
+            if question_identifier(sent) == 0:
+                for i in set(get_negator_affected(words_lower)):
+                    if i < len(sentiments) and i >= 0:
+                        sentiments[i] *= -1
+        
+            if len(words_lower) == 0:
+                sentences_output.append(0)
+            
+            ex_mod = exclamation_modifier(sent)
+            sentiments[:] = [sentiment * ex_mod for sentiment in sentiments if sentiment != 0]
+            
+            if normal:    
+                sentiments = np.multiply([float(i) for i in sentiments], ([0.2]*len(sentiments)))
+                sentiments = np.where(sentiments < -1, -1, np.where(sentiments > 1, 1, sentiments))
+        
+            total_sentiment = sum(sentiments)
+            if output == "total" or output == "by_sentence_total":
+                sentences_output.append(total_sentiment)
+            elif output == "by_sentence_mean" and len(sentiments) != 0: sentences_output.append(total_sentiment / len(sentiments))
+            else: sentences_output.append(0)
+        
+        if output == "by_sentence_mean" or output == "by_sentence_total":
+            if len(sentences_output) <= 1:
+                return sentences_output[0]
+            return sentences_output
+        elif output == "total":
+            return sum(sentences_output)
+        else:
+            return sentences_output
 
-    if men_identifier(words_lower) > 0:
-        sentiments = men_sentiment(sentiments, words_lower)
+    elif output == "mean":
+        words_caps = clean_words_caps(text)
+        words_lower = clean_words_lower(text)
+        stemmed = stemning(words_lower)
+        sentiments = get_sentiment(stemmed)
 
-    sentiments = get_intensifier(sentiments, stemmed)
-    sentiments = caps_modifier(sentiments, words_caps)
+        if men_identifier(words_lower) > 0:
+            sentiments = men_sentiment(sentiments, words_lower)
+    
+        sentiments = get_intensifier(sentiments, stemmed)
+        sentiments = caps_modifier(sentiments, words_caps)
+    
+        if question_identifier(text) == 0:
+            for i in set(get_negator_affected(words_lower)):
+                if i < len(sentiments) and i >= 0:
+                    sentiments[i] *= -1
+    
+        if len(words_lower) == 0:
+            sentences_output.append(0)
+        
+        ex_mod = exclamation_modifier(text)
+        sentiments[:] = [sentiment * ex_mod for sentiment in sentiments if sentiment != 0]
+        
+        if normal:    
+            sentiments = np.multiply([float(i) for i in sentiments], ([0.2]*len(sentiments)))
+            sentiments = np.where(sentiments < -1, -1, np.where(sentiments > 1, 1, sentiments))
+        
+        if len(sentiments) > 0: return sum(sentiments) / len(sentiments)
+        else: return 0    
 
-    if question_identifier(sentence) == 0:
-        for i in set(get_negator_affected(words_lower)):
-            if i < len(sentiments) and i >= 0:
-                sentiments[i] *= -1
-
-    if len(words_lower) == 0:
-        return 0
-
-    sentiments[:] = [sentiment for sentiment in sentiments if sentiment != 0]
-
-    total_sentiment = sum(sentiments) * exclamation_modifier(sentence)
-    mean_sentiment = total_sentiment/len(sentiments)
-    if mean_sentiment > 10:
-        mean_sentiment = 10
-    if mean_sentiment < -10:
-        mean_sentiment = -10
-    return mean_sentiment
 
 def sentidaV2_examples():
-    print("Example of usage: ", sentidaV2("Lad der blive fred.", output = "mean"))
+    print("_____________________________")
+    print("\nExample of usage:\nLad der bliver fred\nSentiment = ", sentidaV2(
+        "Lad der blive fred.", output="mean"), "\n_____________________________")
     # Example of usage: 2.0
-    print("With exclamation mark: ", sentidaV2("Lad der blive fred!", output = "mean"))
+    print("\nWith exclamation mark:\nLad der blive fred!\nSentiment = ", sentidaV2(
+        "Lad der blive fred!", output="mean"), "\n_____________________________")
     # With exclamation mark: 3.13713
-    print("With several exclamation mark: ", sentidaV2("Lad der blive fred!!!", output = "mean"))
+    print("\nWith several exclamation mark:\nLad der blive fred!!!\nSentiment = ", sentidaV2(
+        "Lad der blive fred!!!", output="mean"), "\n_____________________________")
     # With several exclamation mark:  3.7896530399999997
-    print("Uppercase: ", sentidaV2("Lad der BLIVE FRED", output = "mean"))
+    print("\nUppercase:\nlad der BLIVE FRED\nSentiment = ", sentidaV2("Lad der BLIVE FRED", output="mean"), "\n_____________________________")
     # Uppercase:  3.466
-    print("Negative sentence: ", sentidaV2("Det går dårligt.", output = "mean"))
+    print("\nNegative sentence:\nDet går dårligt\nSentiment = ", sentidaV2("Det går dårligt.", output="mean"), "\n_____________________________")
     # With exclamation mark:  -1.8333333333333335
-    print("Negation in sentence: ", sentidaV2("Det går ikke dårligt.", output = "mean"))
+    print("\nNegation in sentence:\nDet går ikke dårligt\nSentiment = ", sentidaV2(
+        "Det går ikke dårligt.", output="mean"), "\n_____________________________")
     # Negation in sentence:  1.8333333333333335
-    print("'Men' ('but'): ", sentidaV2("Lad der blive fred, men det går dårligt.", output = "mean"))
+    print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", sentidaV2(
+        "Lad der blive fred, men det går dårligt.", output="mean"), "\n_____________________________")
     # 'Men' ('but'):  -1.5
+    print("\n'Normalized:\nLad der blive fred\nSentiment = ", sentidaV2(
+        "Lad der blive fred.", output = "mean", normal = True), "\n_____________________________")
+    # Normalized:  0.4
 
+sentidaV2_examples()
 
-# Still missing: common phrases, adjusted values for exclamation marks,
-# Adjusted values for men-sentences, adjusted values for capslock,
-# More rated words, more intensifiers/mitigators, better solution than snowball stemmer,
-# Synonym/antonym dictionary.
-# Social media orientated: emoticons, using multiple letters - i.e. suuuuuper.
-
-
+print(sentidaV2(text = "Lol, der fik jeg Dem, Jackson!!! Nu må vi lige høre på dataen i min numse. Bumselumse!!!!! Skatten skal findes!!!!", 
+                output = "by_sentence_mean"))
 
 ##################################
 ### CUSTOM FUNCTIONS OPTIMIZED ###
 ##################################
 
-def sentidaV2_dictonly (text):
+# def sentidaV2_dictonly (text):
