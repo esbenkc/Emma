@@ -12,6 +12,10 @@ research purposes (please cite). If you want to use the tool
 for commercial purposes, please contact:
     - contact@esbenkc.com
     - sorenorm@live.dk
+Or the SentidaV1 team:
+    - gustavaarup0111@gmail.com
+    - jacdals@hotmail.com
+    - larskjartanbachersvendsen@gmail.com
 
 SENTIDA v2.
 Aarhus University, Cognitive Science.
