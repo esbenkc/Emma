@@ -1,9 +1,9 @@
 Metadata-Version: 2.1
-Name: SentidaV2
-Version: 0.2.1
-Summary: A Danish sentiment analysis package
+Name: sentida
+Version: 0.3.4
+Summary: The Sentida Danish sentiment analysis package
 Home-page: https://github.com/esbenkc/emma
-Author: Søren Orm, Esben Kran
+Author: Esben Kran, Søren Orm
 Author-email: contact@esbenkc.com
 License: UNKNOWN
 Description: #### Sentida V2
@@ -34,21 +34,29 @@ Description: #### Sentida V2
         ### Installation
         You can install SentidaV2 through pip with the following command:
         ```
-        pip install SentidaV2
+        pip install sentida
         ```
         ### Documentation and examples
         The function:
         ```
-        SentidaV2.sentidaV2( character, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"] )
+        from sentida import sentida2
+        Sentida2().sentida2(
+                            text,
+                            output = ["mean", "total", "by_sentence_mean", "by_sentence_total"],
+                            normal = True,
+                            speed = ["normal", "fast"]
+                            )
         # Speed parameter does not have a function in version <0.2.1
         ```
+        WARNING: Setting speed to fast drastically reduces sentiment precision in complex sentences but speeds up the process by 180% (10,000 iteration test).
+        
         Usage examples:
         ```
         # Define the class:
-        SV2 = SentidaV2()
+        SV2 = Sentida2()
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der blive fred.',
                 output = 'mean',
                 normal = False)
@@ -58,7 +66,7 @@ Description: #### Sentida V2
         Sentiment =  2.0
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der blive fred!',
                 output = 'mean',
                 normal = False)
@@ -68,7 +76,7 @@ Description: #### Sentida V2
         Sentiment =  3.13713
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der blive fred!!!',
                 output = 'mean',
                 normal = False)
@@ -78,7 +86,7 @@ Description: #### Sentida V2
         Sentiment =  3.7896530399999997
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der BLIVE FRED',
                 output = 'mean',
                 normal = False)
@@ -88,7 +96,7 @@ Description: #### Sentida V2
         Sentiment =  3.466
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Det gÃ¥r dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -98,7 +106,7 @@ Description: #### Sentida V2
         Sentiment =  -1.8333333333333335
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Det gÃ¥r ikke dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -108,7 +116,7 @@ Description: #### Sentida V2
         Sentiment =  1.8333333333333335
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der blive fred, men det gÃ¥r dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -118,7 +126,7 @@ Description: #### Sentida V2
         Sentiment =  -1.5
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der blive fred.',
                 output = 'mean',
                 normal = True)
@@ -128,7 +136,7 @@ Description: #### Sentida V2
         Sentiment =  0.4
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
                 output = 'by_sentence_mean',
                 normal = False)
@@ -138,7 +146,7 @@ Description: #### Sentida V2
         Sentiments = [2.0, -2.8757025]
         _____________________________
         
-        SV2.sentidaV2(
+        SV2.sentida2(
                 text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
                 output = 'by_sentence_total',
                 normal = False)

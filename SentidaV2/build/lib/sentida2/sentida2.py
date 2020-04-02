@@ -2,12 +2,15 @@
 # Author: CINeMa - SOHa and E. KranC
 
 '''
-sentidaV2(text, output=["mean", "total", "by_sentence_mean", "by_sentence_total"], normal=True, speed = ["normal", "fast"])
+Sentida2().sentida2(text,
+                    output = ["mean", "total", "by_sentence_mean", "by_sentence_total"],
+                    normal=True,
+                    speed = ["normal", "fast"])
 
 Outputs the sentiment value of the Danish input text.
 Define the output to your liking based on the input and desired output.
 Set normal to true if you want values between -1 and 1.
-Define the speed if you have a lot of data.
+Define the speed if you want _speed_
 '''
 
 #################
@@ -17,6 +20,7 @@ Define the speed if you have a lot of data.
 import os
 import re
 import string
+import timeit
 from collections import namedtuple
 from inspect import getsourcefile
 from itertools import product
@@ -64,23 +68,24 @@ SV2STRUCT.SPECIAL_CASE_IDIOMS = {}
 
 """
 
-sentidaV2(
+sentida2(
         text = string,                      Text to analyze
         output = ['mean',                   Returns as complete text mean
                   'total',                  Returns as complete text total
                                               Calculated by sentence and summed
                   'by_sentence_mean',       Returns list of mean sentiment by sentence
                   'by_sentence_total'],     Returns list of total sentiment by sentence
-        normal = True                       Normalize sentiment score (-1 to 1)
+        normal = True,                      Normalize sentiment score (-1 to 1)
+        speed = ['normal', 'fast']          If you want to compensate precision for speed
         )
 
 
 USAGE EXAMPLES:
 Define the class:
-    SV2 = SentidaV2()
+    SV2 = Sentida2()
 
 Single sentence:
-    SV2.sentidaV2(
+    SV2.sentida2(
             text = 'Lad der blive fred.',
             output = 'mean',
             normal = False)
@@ -89,7 +94,7 @@ Single sentence:
         # 2.0
 
 Multiple sentences normalized:
-    SV2.sentidaV2(
+    SV2.sentida2(
             text = 'Lad der bliver fred. Det går dårligt!',
             output = 'by_sentence_total',
             normal = True)
@@ -104,7 +109,7 @@ Multiple sentences normalized:
 ###     STATIC METHODS     ###
 ##############################
 
-class SentidaV2():
+class Sentida2():
 
     def __init__(self, lexicon_file="aarup.csv", intensifier_file = "intensifier.csv"):
         # Reading the sentiment dictionary files and fixing the encoding
@@ -196,7 +201,7 @@ class SentidaV2():
                 if inten_pos + 1 not in position:
                     position.append(inten_pos + 1)
                     if inten_pos + 1 < len(sentiments):
-                        self.sentiments[inten_pos +
+                        sentiments[inten_pos +
                                    1] *= scores[intensifiers.index(word)]
 
                 if inten_pos - 1 not in position:
@@ -263,7 +268,7 @@ class SentidaV2():
 
         return senti_scores
 
-    def sentidaV2(self, text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"]):
+    def sentida2(self, text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"]):
 
         if speed  == "fast":
             sents = filter(None, re.split("[.:;?!]", text))
@@ -384,34 +389,34 @@ class SentidaV2():
             else:
                 return 0
 
-def sentidaV2_examples():
-    SV2 = SentidaV2()
+def sentida2_examples():
+    SV2 = Sentida2()
     print("_____________________________")
-    print("\nExample of usage:\nLad der bliver fred\nSentiment = ", SV2.sentidaV2(
+    print("\nExample of usage:\nLad der bliver fred\nSentiment = ", SV2.sentida2(
         "Lad der blive fred.", output="mean"), "\n_____________________________")
     # Example of usage: 2.0
-    print("\nWith exclamation mark:\nLad der blive fred!\nSentiment = ", SV2.sentidaV2(
+    print("\nWith exclamation mark:\nLad der blive fred!\nSentiment = ", SV2.sentida2(
         "Lad der blive fred!", output="mean"), "\n_____________________________")
     # With exclamation mark: 3.13713
-    print("\nWith several exclamation mark:\nLad der blive fred!!!\nSentiment = ", SV2.sentidaV2(
+    print("\nWith several exclamation mark:\nLad der blive fred!!!\nSentiment = ", SV2.sentida2(
         "Lad der blive fred!!!", output="mean"), "\n_____________________________")
     # With several exclamation mark:  3.7896530399999997
-    print("\nUppercase:\nlad der BLIVE FRED\nSentiment = ", SV2.sentidaV2(
+    print("\nUppercase:\nlad der BLIVE FRED\nSentiment = ", SV2.sentida2(
         "Lad der BLIVE FRED", output="mean"), "\n_____________________________")
     # Uppercase:  3.466
-    print("\nNegative sentence:\nDet går dårligt\nSentiment = ", SV2.sentidaV2(
+    print("\nNegative sentence:\nDet går dårligt\nSentiment = ", SV2.sentida2(
         "Det går dårligt.", output="mean"), "\n_____________________________")
     # With exclamation mark:  -1.8333333333333335
-    print("\nNegation in sentence:\nDet går ikke dårligt\nSentiment = ", SV2.sentidaV2(
+    print("\nNegation in sentence:\nDet går ikke dårligt\nSentiment = ", SV2.sentida2(
         "Det går ikke dårligt.", output="mean"), "\n_____________________________")
     # Negation in sentence:  1.8333333333333335
-    print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", SV2.sentidaV2(
+    print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", SV2.sentida2(
         "Lad der blive fred, men det går dårligt.", output="mean"), "\n_____________________________")
     # 'Men' ('but'):  -1.5
-    print("\nNon-normalized:\nLad der blive fred\nSentiment = ", SV2.sentidaV2(
+    print("\nNon-normalized:\nLad der blive fred\nSentiment = ", SV2.sentida2(
         "Lad der blive fred.", output="mean", normal=False), "\n_____________________________")
     # Normalized:  0.4
-    print("\nMultiple sentences mean:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentidaV2(
+    print("\nMultiple sentences mean:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentida2(
         "Lad der bliver fred. Det går dårligt!", "by_sentence_mean"), "\n_____________________________")
-    print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentidaV2(
+    print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentida2(
         "Lad der bliver fred. Det går dårligt!", "by_sentence_total"), "\n_____________________________")

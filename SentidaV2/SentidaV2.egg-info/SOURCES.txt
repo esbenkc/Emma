@@ -1,7 +1,0 @@
-README.md
-SentidaV2.py
-setup.py
-SentidaV2.egg-info/PKG-INFO
-SentidaV2.egg-info/SOURCES.txt
-SentidaV2.egg-info/dependency_links.txt
-SentidaV2.egg-info/top_level.txt

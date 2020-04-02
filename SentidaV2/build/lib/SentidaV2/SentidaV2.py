@@ -17,6 +17,7 @@ Define the speed if you have a lot of data.
 import os
 import re
 import string
+import timeit
 from collections import namedtuple
 from inspect import getsourcefile
 from itertools import product
@@ -196,7 +197,7 @@ class SentidaV2():
                 if inten_pos + 1 not in position:
                     position.append(inten_pos + 1)
                     if inten_pos + 1 < len(sentiments):
-                        self.sentiments[inten_pos +
+                        sentiments[inten_pos +
                                    1] *= scores[intensifiers.index(word)]
 
                 if inten_pos - 1 not in position:

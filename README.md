@@ -49,10 +49,15 @@ All data is in .csv format in UTF-8 encoding.
 ### Installation
 You can install SentidaV2 through pip with the following command:
 ```
-pip install SentidaV2
+pip install sentida
 ```
 ### Documentation and examples
 See documentation in the SentidaV2 subfolder.
+```
+from sentida.sentida2 import Sentida2, sentida2_examples
+s2 = Sentida2()
+s2.sentida2("Programmering er dejligt. Jeg elsker sentimentanalyse!!", output = "by_sentence_mean", normal = True, speed = "fast")
+```
 
 ### References
 Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38–53.
