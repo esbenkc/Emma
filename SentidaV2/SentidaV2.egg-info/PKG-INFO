@@ -1,0 +1,213 @@
+Metadata-Version: 2.1
+Name: SentidaV2
+Version: 0.2.1
+Summary: A Danish sentiment analysis package
+Home-page: https://github.com/esbenkc/emma
+Author: Søren Orm, Esben Kran
+Author-email: contact@esbenkc.com
+License: UNKNOWN
+Description: #### Sentida V2
+        The new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
+        
+        Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
+        
+        - [Authors and Citation](#authors-and-citation)
+        - [Installation](#installation)
+        - [Documentation](#documentation-and-examples)
+        - [Context](#acknowledgments-and-context)
+        - [Notes on the current state of the program](#notes)
+        - [References](#references)
+        
+        ### Authors and Citation
+        Created by SÃ¸ren Orm and Esben Kran.
+        > Emma: Danish Computational Analysis of Emotion in Text
+        > (by S. Orm and E. Kran)
+        
+        For questions and commercial use, please contact:
+        * Esben Kran C.
+          * contact@esbenkc.com
+          * Aarhus University, [CINeMa](https://inema.webflow.io)
+        * SÃ¸ren Orm H.
+          * sorenorm@live.dk
+          * Aarhus University, [CINeMa](https://inema.webflow.io)
+        
+        ### Installation
+        You can install SentidaV2 through pip with the following command:
+        ```
+        pip install SentidaV2
+        ```
+        ### Documentation and examples
+        The function:
+        ```
+        SentidaV2.sentidaV2( character, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"] )
+        # Speed parameter does not have a function in version <0.2.1
+        ```
+        Usage examples:
+        ```
+        # Define the class:
+        SV2 = SentidaV2()
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der blive fred.',
+                output = 'mean',
+                normal = False)
+        
+        Example of usage:
+        Lad der bliver fred
+        Sentiment =  2.0
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der blive fred!',
+                output = 'mean',
+                normal = False)
+        
+        With exclamation mark:
+        Lad der blive fred!
+        Sentiment =  3.13713
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der blive fred!!!',
+                output = 'mean',
+                normal = False)
+        
+        With several exclamation mark:
+        Lad der blive fred!!!
+        Sentiment =  3.7896530399999997
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der BLIVE FRED',
+                output = 'mean',
+                normal = False)
+        
+        Uppercase:
+        lad der BLIVE FRED
+        Sentiment =  3.466
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Det gÃ¥r dÃ¥rligt.',
+                output = 'mean',
+                normal = False)
+        
+        Negative sentence:
+        Det gÃ¥r dÃ¥rligt
+        Sentiment =  -1.8333333333333335
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Det gÃ¥r ikke dÃ¥rligt.',
+                output = 'mean',
+                normal = False)
+        
+        Negation in sentence:
+        Det gÃ¥r ikke dÃ¥rligt
+        Sentiment =  1.8333333333333335
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der blive fred, men det gÃ¥r dÃ¥rligt.',
+                output = 'mean',
+                normal = False)
+        
+        'Men' ('but'):
+        Lad der blive fred, men det gÃ¥r dÃ¥rligt
+        Sentiment =  -1.5
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der blive fred.',
+                output = 'mean',
+                normal = True)
+        
+        Normalized:
+        Lad der blive fred
+        Sentiment =  0.4
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
+                output = 'by_sentence_mean',
+                normal = False)
+        
+        Multiple sentences mean:
+        Lad der bliver fred. Det gÃ¥r dÃ¥rligt!
+        Sentiments = [2.0, -2.8757025]
+        _____________________________
+        
+        SV2.sentidaV2(
+                text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
+                output = 'by_sentence_total',
+                normal = False)
+        
+        Multiple sentences total:
+        Lad der bliver fred. Det gÃ¥r dÃ¥rligt!
+        Sentiments = [2.0, -5.751405]
+        _____________________________
+        ```
+        ### Acknowledgements and Context
+        Thanks to CINeMa (https://inema.webflow.io),
+        the Sentida team, jry, VADER, AFINN, and last
+        but not least Formula T., for inspiration and encouragement.
+        For license information, see LICENSE.TXT
+        
+        The SentidaV2 sentiment analysis tool is freely available for
+        research purposes (please cite). If you want to use the tool
+        for commercial purposes, please contact:
+            - contact@esbenkc.com
+            - sorenorm@live.dk
+        Or the SentidaV1 team:
+            - gustavaarup0111@gmail.com
+            - jacdals@hotmail.com
+            - larskjartanbachersvendsen@gmail.com
+        
+        SENTIDA v2.
+        Aarhus University, Cognitive Science.
+        2019 - Cognition & Communication.
+        @authors: sorenorm & esbenkc.
+        
+        This script was developed along with other tools in an attempt to improve
+        danish sentiment analysis. The tool will be updated as more data is collected
+        and new methods for more optimally accessing sentiment is developed.
+        
+        ### Notes
+        VADER BASIS VALUES
+        
+        Multiplication values:
+            0.291, 0.215, and 0.208 for !, !!, and !!! respectively
+                empirically tested by one sentence compared to the three conditions
+            0.733 for uppercase
+                empirically tested from single control sentence to uppercase version
+            0.293 for degree modifications from adverbs
+                empirically tested with "extremely"
+        
+        
+        SENTIDA V2 BASIS VALUES
+        
+        Currently using VADER basis values
+        Question mark is: XXX
+        Degree modifications for other words are implemented in intensitifer list
+            - Need implementation of larger intensifier list based on sentences
+        
+        
+        FUTURE IMPROVEMENTS
+        
+        Still missing: common phrases, adjusted values for exclamation marks,
+        Adjusted values for men-sentences, adjusted values for uppercase,
+        More rated words, more intensifiers/mitigators, better solution than snowball stemmer,
+        Synonym/antonym dictionary.
+        Social media orientated: emoticons, using multiple letters - i.e. suuuuuper.
+        Normalization with respect to sub-(-1) and super-(1) output values
+        
+        ### References
+        Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38â€“53.
+        
+        Hutto, C. J., & Gilbert, E. (2014, May 16). VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text. Eighth International AAAI Conference on Weblogs and Social Media. Eighth International AAAI Conference on Weblogs and Social Media. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

@@ -28,7 +28,7 @@ A new domain general validation dataset called Emma that exceeds current validat
 If you are Danish, you can help improve the tool by rating the sentences or sharing the form (it updates with new sentences for every trial): https://forms.gle/rhGmE8QZRQpp74WNA
 
 #### Sentida V2
-Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma). 
+Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
 
 Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
 
@@ -47,7 +47,10 @@ All data is in .csv format in UTF-8 encoding.
     Includes TP.csv and TP2.csv used in the paper and previous studies (Lauridsen et al., 2019)
 
 ### Installation
-
+You can install SentidaV2 through pip with the following command:
+```
+pip install SentidaV2
+```
 ### Documentation and examples
 The function:
 ```
@@ -58,103 +61,103 @@ Usage examples:
 _____________________________
 
 sentidaV2(
-        text = 'Lad der blive fred.', 
-        output = 'mean', 
+        text = 'Lad der blive fred.',
+        output = 'mean',
         normal = False)
 
 Example of usage:
 Lad der bliver fred
-Sentiment =  2.0 
+Sentiment =  2.0
 _____________________________
 
 sentidaV2(
-        text = 'Lad der blive fred!', 
-        output = 'mean', 
+        text = 'Lad der blive fred!',
+        output = 'mean',
         normal = False)
 
 With exclamation mark:
 Lad der blive fred!
-Sentiment =  3.13713 
+Sentiment =  3.13713
 _____________________________
 
 sentidaV2(
-        text = 'Lad der blive fred!!!', 
-        output = 'mean', 
+        text = 'Lad der blive fred!!!',
+        output = 'mean',
         normal = False)
 
 With several exclamation mark:
 Lad der blive fred!!!
-Sentiment =  3.7896530399999997 
+Sentiment =  3.7896530399999997
 _____________________________
 
 sentidaV2(
-        text = 'Lad der BLIVE FRED', 
-        output = 'mean', 
+        text = 'Lad der BLIVE FRED',
+        output = 'mean',
         normal = False)
 
 Uppercase:
 lad der BLIVE FRED
-Sentiment =  3.466 
+Sentiment =  3.466
 _____________________________
 
 sentidaV2(
-        text = 'Det går dårligt.', 
-        output = 'mean', 
+        text = 'Det går dårligt.',
+        output = 'mean',
         normal = False)
 
 Negative sentence:
 Det går dårligt
-Sentiment =  -1.8333333333333335 
+Sentiment =  -1.8333333333333335
 _____________________________
 
 sentidaV2(
-        text = 'Det går ikke dårligt.', 
-        output = 'mean', 
+        text = 'Det går ikke dårligt.',
+        output = 'mean',
         normal = False)
 
 Negation in sentence:
 Det går ikke dårligt
-Sentiment =  1.8333333333333335 
+Sentiment =  1.8333333333333335
 _____________________________
 
 sentidaV2(
-        text = 'Lad der blive fred, men det går dårligt.', 
-        output = 'mean', 
+        text = 'Lad der blive fred, men det går dårligt.',
+        output = 'mean',
         normal = False)
 
 'Men' ('but'):
 Lad der blive fred, men det går dårligt
-Sentiment =  -1.5 
+Sentiment =  -1.5
 _____________________________
 
 sentidaV2(
-        text = 'Lad der blive fred.', 
-        output = 'mean', 
+        text = 'Lad der blive fred.',
+        output = 'mean',
         normal = True)
 
 Normalized:
 Lad der blive fred
-Sentiment =  0.4 
+Sentiment =  0.4
 _____________________________
 
 sentidaV2(
-        text = 'Lad der bliver fred. Det går dårligt!', 
-        output = 'by_sentence_mean', 
+        text = 'Lad der bliver fred. Det går dårligt!',
+        output = 'by_sentence_mean',
         normal = False)
 
 Multiple sentences mean:
 Lad der bliver fred. Det går dårligt!
-Sentiments = [2.0, -2.8757025] 
+Sentiments = [2.0, -2.8757025]
 _____________________________
 
 sentidaV2(
-        text = 'Lad der bliver fred. Det går dårligt!', 
-        output = 'by_sentence_total', 
+        text = 'Lad der bliver fred. Det går dårligt!',
+        output = 'by_sentence_total',
         normal = False)
 
 Multiple sentences total:
 Lad der bliver fred. Det går dårligt!
-Sentiments = [2.0, -5.751405] 
+Sentiments = [2.0, -5.751405]
 _____________________________
 ```
 ### References
