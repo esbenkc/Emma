@@ -2,7 +2,7 @@
 # Author: CINeMa - SOHa and E. KranC
 
 '''
-Sentida2().sentida2(text,
+Sentida().sentida(text,
                     output = ["mean", "total", "by_sentence_mean", "by_sentence_total"],
                     normal=True,
                     speed = ["normal", "fast"])
@@ -20,10 +20,8 @@ Define the speed if you want _speed_
 import os
 import re
 import string
-import timeit
 from collections import namedtuple
 from inspect import getsourcefile
-from itertools import product
 
 import nltk
 import numpy as np
@@ -35,40 +33,39 @@ from nltk.stem import SnowballStemmer
 ### CONSTANTS ###
 #################
 
-SV2STRUCT = namedtuple("SV2STRUCT", """B_INCR, B_DECR, C_INCR, N_SCALAR,
+SENSTRUCT = namedtuple("SENSTRUCT", """B_INCR, B_DECR, C_INCR, N_SCALAR,
                        QM_MULT, QM_SUCC_MULT, EX_INTENSITY, UP_INTENSITY,
                        BUT_INTENSITY, N_TRIGGER, NEGATE, ADD, BUT_DICT,
                        BOOSTER_DICT, SENTIMENT_LADEN_IDIOMS, SPECIAL_CASE_IDIOMS
                        """)
-SV2STRUCT.B_INCR = 0.293
-SV2STRUCT.B_DECR = -0.293
-SV2STRUCT.C_INCR = 0.733
-SV2STRUCT.N_SCALAR = -0.74
-SV2STRUCT.QM_MULT = 0.94
-SV2STRUCT.QM_SUCC_MULT = 0.18
-SV2STRUCT.EX_INTENSITY = [1.291, 1.215, 1.208]
-SV2STRUCT.UP_INTENSITY = 1.733
-SV2STRUCT.BUT_INTENSITY = [0.5, 1.5]
-SV2STRUCT.N_TRIGGER = "no"
-SV2STRUCT.NEGATE = \
+SENSTRUCT.B_INCR = 0.293
+SENSTRUCT.B_DECR = -0.293
+SENSTRUCT.C_INCR = 0.733
+SENSTRUCT.N_SCALAR = -0.74
+SENSTRUCT.QM_MULT = 0.94
+SENSTRUCT.QM_SUCC_MULT = 0.18
+SENSTRUCT.EX_INTENSITY = [1.291, 1.215, 1.208]
+SENSTRUCT.UP_INTENSITY = 1.733
+SENSTRUCT.BUT_INTENSITY = [0.5, 1.5]
+SENSTRUCT.N_TRIGGER = "no"
+SENSTRUCT.NEGATE = \
     ['ikke', 'ik', 'ikk', 'ik\'', 'aldrig', 'ingen']
-SV2STRUCT.ADD = \
+SENSTRUCT.ADD = \
     ['og', 'eller']
-SV2STRUCT.BUT_DICT = \
+SENSTRUCT.BUT_DICT = \
     ['men', 'dog']
-SV2STRUCT.BOOSTER_DICT = \
+SENSTRUCT.BOOSTER_DICT = \
     {"temmelig": 0.1, "meget": 0.2, "mega": 0.4, "lidt": -0.2, "ekstremt": 0.4,
      "totalt": 0.2, "utrolig": 0.3, "rimelig": 0.1, "seriøst": 0.3}
-SV2STRUCT.SENTIMENT_LADEN_IDIOMS = {}
-SV2STRUCT.SPECIAL_CASE_IDIOMS = {}
+SENSTRUCT.SENTIMENT_LADEN_IDIOMS = {}
+SENSTRUCT.SPECIAL_CASE_IDIOMS = {}
 
 #####################
 ### DOCUMENTATION ###
 #####################
 
 """
-
-sentida2(
+sentida(
         text = string,                      Text to analyze
         output = ['mean',                   Returns as complete text mean
                   'total',                  Returns as complete text total
@@ -82,10 +79,10 @@ sentida2(
 
 USAGE EXAMPLES:
 Define the class:
-    SV2 = Sentida2()
+    SEN = Sentida()
 
 Single sentence:
-    SV2.sentida2(
+    SEN.sentida(
             text = 'Lad der blive fred.',
             output = 'mean',
             normal = False)
@@ -94,7 +91,7 @@ Single sentence:
         # 2.0
 
 Multiple sentences normalized:
-    SV2.sentida2(
+    SEN.sentida(
             text = 'Lad der bliver fred. Det går dårligt!',
             output = 'by_sentence_total',
             normal = True)
@@ -109,7 +106,7 @@ Multiple sentences normalized:
 ###     STATIC METHODS     ###
 ##############################
 
-class Sentida2():
+class Sentida():
 
     def __init__(self, lexicon_file="aarup.csv", intensifier_file = "intensifier.csv"):
         # Reading the sentiment dictionary files and fixing the encoding
@@ -128,7 +125,7 @@ class Sentida2():
         value = 1
         if ex_counter == 0:
             return 1
-        for idx, m in enumerate(SV2STRUCT.EX_INTENSITY):
+        for idx, m in enumerate(SENSTRUCT.EX_INTENSITY):
             if idx <= ex_counter:
                 value *= m
         return value
@@ -168,7 +165,7 @@ class Sentida2():
         positions = self.caps_identifier(words)
         for i in range(len(sentiments)):
             if i in positions:
-                sentiments[i] *= SV2STRUCT.UP_INTENSITY
+                sentiments[i] *= SENSTRUCT.UP_INTENSITY
         return sentiments
 
     # Function for identifying negations in a list of words. Returns list of
@@ -178,7 +175,7 @@ class Sentida2():
         positions = []
 
         for word in words:
-            if word in SV2STRUCT.NEGATE:
+            if word in SENSTRUCT.NEGATE:
                 neg_pos = words.index(word)
                 positions.append(neg_pos)
                 positions.append(neg_pos + 1)
@@ -238,9 +235,9 @@ class Sentida2():
     def men_sentiment(self, sentiments, words):
         for i in range(len(sentiments)):
             if i < self.men_identifier(words):
-                sentiments[i] *= SV2STRUCT.BUT_INTENSITY[0]
+                sentiments[i] *= SENSTRUCT.BUT_INTENSITY[0]
             else:
-                sentiments[i] *= SV2STRUCT.BUT_INTENSITY[1]
+                sentiments[i] *= SENSTRUCT.BUT_INTENSITY[1]
 
         return sentiments
     # Need empirically tested weights for the part before and after the 'men's'
@@ -268,7 +265,7 @@ class Sentida2():
 
         return senti_scores
 
-    def sentida2(self, text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"]):
+    def sentida(self, text, output = ["mean", "total", "by_sentence_mean", "by_sentence_total"], normal = True, speed = ["normal", "fast"]):
 
         if speed  == "fast":
             sents = filter(None, re.split("[.:;?!]", text))
@@ -390,34 +387,34 @@ class Sentida2():
             else:
                 return 0
 
-def sentida2_examples():
-    SV2 = Sentida2()
+def sentida_examples():
+    SEN = Sentida()
     print("_____________________________")
-    print("\nExample of usage:\nLad der bliver fred\nSentiment = ", SV2.sentida2(
+    print("\nExample of usage:\nLad der bliver fred\nSentiment = ", SEN.sentida(
         "Lad der blive fred.", output="mean"), "\n_____________________________")
     # Example of usage: 2.0
-    print("\nWith exclamation mark:\nLad der blive fred!\nSentiment = ", SV2.sentida2(
+    print("\nWith exclamation mark:\nLad der blive fred!\nSentiment = ", SEN.sentida(
         "Lad der blive fred!", output="mean"), "\n_____________________________")
     # With exclamation mark: 3.13713
-    print("\nWith several exclamation mark:\nLad der blive fred!!!\nSentiment = ", SV2.sentida2(
+    print("\nWith several exclamation mark:\nLad der blive fred!!!\nSentiment = ", SEN.sentida(
         "Lad der blive fred!!!", output="mean"), "\n_____________________________")
     # With several exclamation mark:  3.7896530399999997
-    print("\nUppercase:\nlad der BLIVE FRED\nSentiment = ", SV2.sentida2(
+    print("\nUppercase:\nlad der BLIVE FRED\nSentiment = ", SEN.sentida(
         "Lad der BLIVE FRED", output="mean"), "\n_____________________________")
     # Uppercase:  3.466
-    print("\nNegative sentence:\nDet går dårligt\nSentiment = ", SV2.sentida2(
+    print("\nNegative sentence:\nDet går dårligt\nSentiment = ", SEN.sentida(
         "Det går dårligt.", output="mean"), "\n_____________________________")
     # With exclamation mark:  -1.8333333333333335
-    print("\nNegation in sentence:\nDet går ikke dårligt\nSentiment = ", SV2.sentida2(
+    print("\nNegation in sentence:\nDet går ikke dårligt\nSentiment = ", SEN.sentida(
         "Det går ikke dårligt.", output="mean"), "\n_____________________________")
     # Negation in sentence:  1.8333333333333335
-    print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", SV2.sentida2(
+    print("\n'Men' ('but'):\nLad der blive fred, men det går dårligt\nSentiment = ", SEN.sentida(
         "Lad der blive fred, men det går dårligt.", output="mean"), "\n_____________________________")
     # 'Men' ('but'):  -1.5
-    print("\nNon-normalized:\nLad der blive fred\nSentiment = ", SV2.sentida2(
+    print("\nNon-normalized:\nLad der blive fred\nSentiment = ", SEN.sentida(
         "Lad der blive fred.", output="mean", normal=False), "\n_____________________________")
     # Normalized:  0.4
-    print("\nMultiple sentences mean:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentida2(
+    print("\nMultiple sentences mean:\nLad der bliver fred. Det går dårligt!\nSentiments =", SEN.sentida(
         "Lad der bliver fred. Det går dårligt!", "by_sentence_mean"), "\n_____________________________")
-    print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", SV2.sentida2(
+    print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", SEN.sentida(
         "Lad der bliver fred. Det går dårligt!", "by_sentence_total"), "\n_____________________________")

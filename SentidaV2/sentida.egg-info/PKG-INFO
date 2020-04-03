@@ -1,15 +1,15 @@
 Metadata-Version: 2.1
 Name: sentida
-Version: 0.3.4
+Version: 0.4.2
 Summary: The Sentida Danish sentiment analysis package
 Home-page: https://github.com/esbenkc/emma
 Author: Esben Kran, Søren Orm
 Author-email: contact@esbenkc.com
-License: UNKNOWN
+License: MIT
 Description: #### Sentida V2
         The new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
         
-        Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
+        Implementation of the previous state-of-the-art Danish SA in R, [Sentida](https://github.com/guscode/sentida), for python along with SentidaV2 and programmed loosely from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
         
         - [Authors and Citation](#authors-and-citation)
         - [Installation](#installation)
@@ -39,24 +39,24 @@ Description: #### Sentida V2
         ### Documentation and examples
         The function:
         ```
-        from sentida import sentida2
-        Sentida2().sentida2(
+        from sentida import Sentida
+        Sentida().sentida(
                             text,
                             output = ["mean", "total", "by_sentence_mean", "by_sentence_total"],
                             normal = True,
                             speed = ["normal", "fast"]
                             )
-        # Speed parameter does not have a function in version <0.2.1
+        # Speed parameter does not have an effect in version <0.2.1
         ```
         WARNING: Setting speed to fast drastically reduces sentiment precision in complex sentences but speeds up the process by 180% (10,000 iteration test).
         
         Usage examples:
         ```
         # Define the class:
-        SV2 = Sentida2()
+        SV = Sentida()
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der blive fred.',
                 output = 'mean',
                 normal = False)
@@ -66,7 +66,7 @@ Description: #### Sentida V2
         Sentiment =  2.0
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der blive fred!',
                 output = 'mean',
                 normal = False)
@@ -76,7 +76,7 @@ Description: #### Sentida V2
         Sentiment =  3.13713
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der blive fred!!!',
                 output = 'mean',
                 normal = False)
@@ -86,7 +86,7 @@ Description: #### Sentida V2
         Sentiment =  3.7896530399999997
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der BLIVE FRED',
                 output = 'mean',
                 normal = False)
@@ -96,7 +96,7 @@ Description: #### Sentida V2
         Sentiment =  3.466
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Det gÃ¥r dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -106,7 +106,7 @@ Description: #### Sentida V2
         Sentiment =  -1.8333333333333335
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Det gÃ¥r ikke dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -116,7 +116,7 @@ Description: #### Sentida V2
         Sentiment =  1.8333333333333335
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der blive fred, men det gÃ¥r dÃ¥rligt.',
                 output = 'mean',
                 normal = False)
@@ -126,7 +126,7 @@ Description: #### Sentida V2
         Sentiment =  -1.5
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der blive fred.',
                 output = 'mean',
                 normal = True)
@@ -136,7 +136,7 @@ Description: #### Sentida V2
         Sentiment =  0.4
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
                 output = 'by_sentence_mean',
                 normal = False)
@@ -146,7 +146,7 @@ Description: #### Sentida V2
         Sentiments = [2.0, -2.8757025]
         _____________________________
         
-        SV2.sentida2(
+        SV.sentida(
                 text = 'Lad der bliver fred. Det gÃ¥r dÃ¥rligt!',
                 output = 'by_sentence_total',
                 normal = False)
@@ -214,8 +214,12 @@ Description: #### Sentida V2
         Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38â€“53.
         
         Hutto, C. J., & Gilbert, E. (2014, May 16). VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text. Eighth International AAAI Conference on Weblogs and Social Media. Eighth International AAAI Conference on Weblogs and Social Media. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109
+Keywords: Natural Language Processing Sentiment Analysis
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
 Description-Content-Type: text/markdown

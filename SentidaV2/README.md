@@ -1,7 +1,7 @@
 #### Sentida V2
 The new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
 
-Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
+Implementation of the previous state-of-the-art Danish SA in R, [Sentida](https://github.com/guscode/sentida), for python along with SentidaV2 and programmed loosely from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
 
 - [Authors and Citation](#authors-and-citation)
 - [Installation](#installation)
@@ -31,24 +31,24 @@ pip install sentida
 ### Documentation and examples
 The function:
 ```
-from sentida import sentida2
-Sentida2().sentida2(
+from sentida import Sentida
+Sentida().sentida(
                     text,
                     output = ["mean", "total", "by_sentence_mean", "by_sentence_total"],
                     normal = True,
                     speed = ["normal", "fast"]
                     )
-# Speed parameter does not have a function in version <0.2.1
+# Speed parameter does not have an effect in version <0.2.1
 ```
 WARNING: Setting speed to fast drastically reduces sentiment precision in complex sentences but speeds up the process by 180% (10,000 iteration test).
 
 Usage examples:
 ```
 # Define the class:
-SV2 = Sentida2()
+SV = Sentida()
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der blive fred.',
         output = 'mean',
         normal = False)
@@ -58,7 +58,7 @@ Lad der bliver fred
 Sentiment =  2.0
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der blive fred!',
         output = 'mean',
         normal = False)
@@ -68,7 +68,7 @@ Lad der blive fred!
 Sentiment =  3.13713
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der blive fred!!!',
         output = 'mean',
         normal = False)
@@ -78,7 +78,7 @@ Lad der blive fred!!!
 Sentiment =  3.7896530399999997
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der BLIVE FRED',
         output = 'mean',
         normal = False)
@@ -88,7 +88,7 @@ lad der BLIVE FRED
 Sentiment =  3.466
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Det går dårligt.',
         output = 'mean',
         normal = False)
@@ -98,7 +98,7 @@ Det går dårligt
 Sentiment =  -1.8333333333333335
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Det går ikke dårligt.',
         output = 'mean',
         normal = False)
@@ -108,7 +108,7 @@ Det går ikke dårligt
 Sentiment =  1.8333333333333335
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der blive fred, men det går dårligt.',
         output = 'mean',
         normal = False)
@@ -118,7 +118,7 @@ Lad der blive fred, men det går dårligt
 Sentiment =  -1.5
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der blive fred.',
         output = 'mean',
         normal = True)
@@ -128,7 +128,7 @@ Lad der blive fred
 Sentiment =  0.4
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der bliver fred. Det går dårligt!',
         output = 'by_sentence_mean',
         normal = False)
@@ -138,7 +138,7 @@ Lad der bliver fred. Det går dårligt!
 Sentiments = [2.0, -2.8757025]
 _____________________________
 
-SV2.sentida2(
+SV.sentida(
         text = 'Lad der bliver fred. Det går dårligt!',
         output = 'by_sentence_total',
         normal = False)

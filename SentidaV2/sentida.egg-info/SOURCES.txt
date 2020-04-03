@@ -1,8 +1,9 @@
 README.md
 setup.py
+sentida/__init__.py
 sentida/aarup.csv
 sentida/intensifier.csv
-sentida/sentida2.py
+sentida/sentida.py
 sentida.egg-info/PKG-INFO
 sentida.egg-info/SOURCES.txt
 sentida.egg-info/dependency_links.txt
