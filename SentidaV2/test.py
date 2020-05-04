@@ -1,6 +1,10 @@
 from timeit import timeit
 
-from sentida import Sentida
+import sentida as sd
+SV = sd.Sentida()
+Sentida().sentida("dårlig oplevelse")
+print(SV.sentida("dårlig oplevelse"))
+print(sd.sentida_examples)
 
 setup = """
 from sentida.sentida2 import Sentida2, sentida2_examples

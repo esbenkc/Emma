@@ -1,7 +1,7 @@
-#### Sentida V2
-The new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
+#### Sentida
+The new state-of-the-art Danish sentiment analysis tool further developed from the previous state-of-the-art Sentida and shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
 
-Implementation of the previous state-of-the-art Danish SA in R, [Sentida](https://github.com/guscode/sentida), for python along with SentidaV2 and programmed loosely from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
+Implementation of the previous state-of-the-art Danish SA in R, [Sentida](https://github.com/guscode/sentida), for python along with Sentida and programmed loosely from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
 
 - [Authors and Citation](#authors-and-citation)
 - [Installation](#installation)
@@ -24,7 +24,7 @@ For questions and commercial use, please contact:
   * Aarhus University, [CINeMa](https://inema.webflow.io)
 
 ### Installation
-You can install SentidaV2 through pip with the following command:
+You can install Sentida through pip with the following command:
 ```
 pip install sentida
 ```
@@ -154,17 +154,17 @@ the Sentida team, jry, VADER, AFINN, and last
 but not least Formula T., for inspiration and encouragement.
 For license information, see LICENSE.TXT
 
-The SentidaV2 sentiment analysis tool is freely available for
-research purposes (please cite). If you want to use the tool
+The Sentida sentiment analysis tool is freely available for
+research purposes (please cite Lauridsen et al., 2019). If you want to use the tool
 for commercial purposes, please contact:
     - contact@esbenkc.com
     - sorenorm@live.dk
-Or the SentidaV1 team:
+Or the Sentida team:
     - gustavaarup0111@gmail.com
     - jacdals@hotmail.com
     - larskjartanbachersvendsen@gmail.com
 
-SENTIDA v2.
+SENTIDA
 Aarhus University, Cognitive Science.
 2019 - Cognition & Communication.
 @authors: sorenorm & esbenkc.
@@ -185,7 +185,7 @@ Multiplication values:
         empirically tested with "extremely"
 
 
-SENTIDA V2 BASIS VALUES
+SENTIDA BASIS VALUES
 
 Currently using VADER basis values
 Question mark is: XXX

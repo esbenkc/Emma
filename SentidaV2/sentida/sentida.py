@@ -19,14 +19,13 @@ Define the speed if you want _speed_
 
 import os
 import re
-import string
 from collections import namedtuple
 from inspect import getsourcefile
 
-import nltk
 import numpy as np
 import pandas as pd
-import requests
+
+import nltk
 from nltk.stem import SnowballStemmer
 
 #################
@@ -107,10 +106,14 @@ Multiple sentences normalized:
 ##############################
 
 class Sentida():
-
+    
+    # def get_script_path(self):
+    #     return os.path.dirname(os.path.realpath(sys.argv[0]))
+    
     def __init__(self, lexicon_file="aarup.csv", intensifier_file = "intensifier.csv"):
         # Reading the sentiment dictionary files and fixing the encoding
         _this_module_file_path_ = os.path.abspath(getsourcefile(lambda: 0))
+        # _this_module_file_path_ = self.get_script_path()
         self.aarup = pd.read_csv(os.path.join(os.path.dirname(_this_module_file_path_), lexicon_file), encoding='ISO-8859-1')
         self.intensifier = pd.read_csv(os.path.join(os.path.dirname(_this_module_file_path_), intensifier_file), encoding='ISO-8859-1')
         self.intensifier['stem'] = self.fix_unicode(self.intensifier['stem'])
@@ -283,109 +286,111 @@ class Sentida():
                 senti = np.multiply(senti, [0.2] * len(list(senti)))
                 senti = np.where(senti < -1, -1.0, np.where(senti > 1, 1.0, senti))
             return senti
-
-        '''
-        Turns text input into a sentiment score.
-
-        Method works as follows:
-            output - mean:
-                Analyzes the text as a single sentence
-            output - total || by_sentence_mean || by_sentence_total
-                Splits into sentences to analyze each as a single sentence
-                Splits branch into output branches
-        '''
-        # Goes into sentence splitting if it's not the global mean output
-        if output == "by_sentence_mean" or output == "by_sentence_total" or output == "total":
-            sentences = nltk.sent_tokenize(text)
-            # The tokenizer splits !!! into two sentences if at the end of the text
-            # Remove problem by analyzing, appending, and removing
-            if sentences[-1] == "!":
-                sentences[-2] = sentences[-2] + "!"
-                del sentences[-1]
-            sentences_output = []
-
-            # Sentence splitting branch
-            for sent in sentences:
-                words_upper = self.clean_words_upper(sent)
-                words_lower = self.clean_words_lower(sent)
+        else:
+            '''
+            Turns text input into a sentiment score.
+    
+            Method works as follows:
+                output - mean:
+                    Analyzes the text as a single sentence
+                output - total || by_sentence_mean || by_sentence_total
+                    Splits into sentences to analyze each as a single sentence
+                    Splits branch into output branches
+            '''
+            # Goes into sentence splitting if it's not the global mean output
+            if output == "by_sentence_mean" or output == "by_sentence_total" or output == "total":
+                sentences = nltk.sent_tokenize(text)
+                # The tokenizer splits !!! into two sentences if at the end of the text
+                # Remove problem by analyzing, appending, and removing
+                if sentences[-1] == "!":
+                    sentences[-2] = sentences[-2] + "!"
+                    del sentences[-1]
+                sentences_output = []
+    
+                # Sentence splitting branch
+                for sent in sentences:
+                    words_upper = self.clean_words_upper(sent)
+                    words_lower = self.clean_words_lower(sent)
+                    stemmed = self.stemming(words_lower)
+                    sentiments = self.get_sentiment(stemmed)
+    
+                    if self.men_identifier(words_lower) > 0:
+                        sentiments = self.men_sentiment(sentiments, words_lower)
+    
+                    sentiments = self.get_intensifier(sentiments, stemmed)
+                    sentiments = self.caps_modifier(sentiments, words_upper)
+    
+                    if self.question_identifier(sent) == 0:
+                        for i in set(self.get_negator_affected(words_lower)):
+                            if i < len(sentiments) and i >= 0:
+                                sentiments[i] *= -1
+    
+                    if len(words_lower) == 0:
+                        sentences_output.append(0)
+    
+                    ex_mod = self.exclamation_modifier(sent)
+                    sentiments[:] = [sentiment *
+                                    ex_mod for sentiment in sentiments if sentiment != 0]
+    
+                    if normal:
+                        sentiments = np.multiply(
+                            [float(i) for i in sentiments], ([0.2]*len(sentiments)))
+                        sentiments = np.where(
+                            sentiments < -1, -1, np.where(sentiments > 1, 1, sentiments))
+    
+                    total_sentiment = sum(sentiments)
+                    if output == "total" or output == "by_sentence_total":
+                        sentences_output.append(total_sentiment)
+                    elif output == "by_sentence_mean" and len(sentiments) != 0:
+                        sentences_output.append(total_sentiment / len(sentiments))
+                    else:
+                        sentences_output.append(0)
+    
+                if output == "by_sentence_mean" or output == "by_sentence_total":
+                    if len(sentences_output) <= 1:
+                        return sentences_output[0]
+                    return sentences_output
+                elif output == "total":
+                    return sum(sentences_output)
+                else:
+                    return sentences_output
+    
+            else:
+                words_upper = self.clean_words_upper(text)
+                words_lower = self.clean_words_lower(text)
                 stemmed = self.stemming(words_lower)
                 sentiments = self.get_sentiment(stemmed)
-
+    
                 if self.men_identifier(words_lower) > 0:
                     sentiments = self.men_sentiment(sentiments, words_lower)
-
+    
                 sentiments = self.get_intensifier(sentiments, stemmed)
                 sentiments = self.caps_modifier(sentiments, words_upper)
-
-                if self.question_identifier(sent) == 0:
+    
+                if self.question_identifier(text) == 0:
                     for i in set(self.get_negator_affected(words_lower)):
                         if i < len(sentiments) and i >= 0:
                             sentiments[i] *= -1
-
+    
                 if len(words_lower) == 0:
                     sentences_output.append(0)
-
-                ex_mod = self.exclamation_modifier(sent)
+    
+                ex_mod = self.exclamation_modifier(text)
                 sentiments[:] = [sentiment *
                                 ex_mod for sentiment in sentiments if sentiment != 0]
-
+    
                 if normal:
                     sentiments = np.multiply(
                         [float(i) for i in sentiments], ([0.2]*len(sentiments)))
-                    sentiments = np.where(
-                        sentiments < -1, -1, np.where(sentiments > 1, 1, sentiments))
-
-                total_sentiment = sum(sentiments)
-                if output == "total" or output == "by_sentence_total":
-                    sentences_output.append(total_sentiment)
-                elif output == "by_sentence_mean" and len(sentiments) != 0:
-                    sentences_output.append(total_sentiment / len(sentiments))
+                    sentiments = np.where(sentiments < -1, -1,
+                                        np.where(sentiments > 1, 1, sentiments))
+    
+                if len(sentiments) > 0:
+                    return sum(sentiments) / len(sentiments)
                 else:
-                    sentences_output.append(0)
-
-            if output == "by_sentence_mean" or output == "by_sentence_total":
-                if len(sentences_output) <= 1:
-                    return sentences_output[0]
-                return sentences_output
-            elif output == "total":
-                return sum(sentences_output)
-            else:
-                return sentences_output
-
-        elif output == "mean":
-            words_upper = self.clean_words_upper(text)
-            words_lower = self.clean_words_lower(text)
-            stemmed = self.stemming(words_lower)
-            sentiments = self.get_sentiment(stemmed)
-
-            if self.men_identifier(words_lower) > 0:
-                sentiments = self.men_sentiment(sentiments, words_lower)
-
-            sentiments = self.get_intensifier(sentiments, stemmed)
-            sentiments = self.caps_modifier(sentiments, words_upper)
-
-            if self.question_identifier(text) == 0:
-                for i in set(self.get_negator_affected(words_lower)):
-                    if i < len(sentiments) and i >= 0:
-                        sentiments[i] *= -1
-
-            if len(words_lower) == 0:
-                sentences_output.append(0)
-
-            ex_mod = self.exclamation_modifier(text)
-            sentiments[:] = [sentiment *
-                            ex_mod for sentiment in sentiments if sentiment != 0]
-
-            if normal:
-                sentiments = np.multiply(
-                    [float(i) for i in sentiments], ([0.2]*len(sentiments)))
-                sentiments = np.where(sentiments < -1, -1,
-                                    np.where(sentiments > 1, 1, sentiments))
-
-            if len(sentiments) > 0:
-                return sum(sentiments) / len(sentiments)
-            else:
-                return 0
+                    return 0
+            return "An error occured here instead"
+        return "An error occured"
 
 def sentida_examples():
     SEN = Sentida()
@@ -418,3 +423,15 @@ def sentida_examples():
         "Lad der bliver fred. Det går dårligt!", "by_sentence_mean"), "\n_____________________________")
     print("\nMultiple sentences total:\nLad der bliver fred. Det går dårligt!\nSentiments =", SEN.sentida(
         "Lad der bliver fred. Det går dårligt!", "by_sentence_total"), "\n_____________________________")
+
+print(Sentida().sentida("dårlig oplevelse"))
+print(Sentida().sentida("jeg er meget tilfreds"))
+
+# pip install sentida
+
+from sentida import Sentida
+
+SV = Sentida()
+dataframe = read_csv("path/to/dataframe")
+index = 7
+sentiments = [SV.sentida(row[index]) for row in dataframe]

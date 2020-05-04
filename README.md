@@ -1,3 +1,21 @@
+# Edit 1
+## Major comments
+- Change target demographic
+ - Give teaser to computational linguistics
+- Explain, don't just use references
+ - Ensure character limit
+ - Why is it better with this?
+- "Hvad skal der til for, at en computer kan læse følelser? Hvad skal man kigge efter og hvorfor?"
+- Explain EMMA more
+ - Very confusing that it's multidimensional but only one dimension is used
+- Rewrite SentidaV2 as the next iteration of Sentida
+
+## Technical notes
+- Standardize datasets - remove 20% central elements from EMMA dataset like TP datasets
+- Remove TP dataset and use only TP2
+
+## TODO
+
 # Emma: Emotional Multidimensional Analysis
 #### Sentiment Analysis Validation Dataset for Danish
 Emma is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.

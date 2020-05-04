@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name = 'sentida',
-    version = '0.4.2',
+    version = '0.5.0',
     author = "Esben Kran, Søren Orm",
     author_email = "contact@esbenkc.com",
     description = "The Sentida Danish sentiment analysis package",
