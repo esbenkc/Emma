@@ -1,28 +1,10 @@
-# Edit 1
-## Major comments
-- Change target demographic
- - Give teaser to computational linguistics
-- Explain, don't just use references
- - Ensure character limit
- - Why is it better with this?
-- "Hvad skal der til for, at en computer kan læse følelser? Hvad skal man kigge efter og hvorfor?"
-- Explain EMMA more
- - Very confusing that it's multidimensional but only one dimension is used
-- Rewrite SentidaV2 as the next iteration of Sentida
-
-## Technical notes
-- Standardize datasets - remove 20% central elements from EMMA dataset like TP datasets
-- Remove TP dataset and use only TP2
-
-## TODO
-
 # Emma: Emotional Multidimensional Analysis
 #### Sentiment Analysis Validation Dataset for Danish
 Emma is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
 - [Introduction](#introduction)
 - [Citation](#citing-this-work)
 - [Emma](#emma)
-- [Sentida V2](#sentida-v2)
+- [Sentida](#sentida)
 - [Descriptions of resources](#descriptions-of-folders)
 - [Installation](#installation)
 - [Examples](#examples)
@@ -45,7 +27,7 @@ A new domain general validation dataset called Emma that exceeds current validat
 
 If you are Danish, you can help improve the tool by rating the sentences or sharing the form (it updates with new sentences for every trial): https://forms.gle/rhGmE8QZRQpp74WNA
 
-#### Sentida V2
+#### Sentida
 Additionally, this repository has the new state-of-the-art Danish sentiment analysis tool upgraded from the previous state-of-the-art Sentida to V2. Sentida V2 shows significant improvement in classifying sentiment in text compared to Sentida (p < 0.01) in three different validation datasets (TP, TP2, Emma).
 
 Built from the previous iteration of state-of-the-art Danish SA, [Sentida](https://github.com/guscode/sentida) and programmed from the [VADER](https://github.com/cjhutto/vaderSentiment) sentiment analysis python implementation.
@@ -65,16 +47,16 @@ All data is in .csv format in UTF-8 encoding.
     Includes TP.csv and TP2.csv used in the paper and previous studies (Lauridsen et al., 2019)
 
 ### Installation
-You can install SentidaV2 through pip with the following command:
+You can install Sentida through pip with the following command:
 ```
 pip install sentida
 ```
 ### Documentation and examples
-See documentation in the SentidaV2 subfolder.
+See documentation in the Sentida subfolder.
 ```
-from sentida.sentida2 import Sentida2, sentida2_examples
-s2 = Sentida2()
-s2.sentida2("Programmering er dejligt. Jeg elsker sentimentanalyse!!", output = "by_sentence_mean", normal = True, speed = "fast")
+from sentida import Sentida, sentida_examples
+s = Sentida()
+s.sentida("Programmering er dejligt. Jeg elsker sentimentanalyse!!", output = "by_sentence_mean", normal = True, speed = "normal")
 ```
 
 ### References
