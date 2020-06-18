@@ -1,0 +1,20 @@
+```{r}
+library(pacman)
+p_load(tidyverse)
+```
+
+```{r}
+emma <- read_csv("Emma.csv") %>%
+  select(-c("GDPR","Name","Public","Region","Age","Education","Occupation"))
+
+emma$Type <- as.factor(emma$Type)
+p_load(plyr)
+emma$Type <- revalue(emma$Type, c("Anden del af men"="After but", "Første del af men"="Before but", "Ikke spørgsmål" = "Not question", "Komplekse sætninger ish" = "Complex sentences", "Med men ish" = "With but", "Simple negative ish" = "Simple negative", "Simple positive ish" = "Simple positive", "Spørgsmål" = "Questions"))
+
+write_csv(emma, "Emma_all.csv")
+
+
+
+```
+
+

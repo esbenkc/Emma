@@ -58,6 +58,7 @@ from sentida import Sentida, sentida_examples
 s = Sentida()
 s.sentida("Programmering er dejligt. Jeg elsker sentimentanalyse!!", output = "by_sentence_mean", normal = True, speed = "normal")
 ```
+:warning: 
 
 ### References
 Lauridsen, G. A., Dalsgaard, J. A., & Svendsen, L. K. B. (2019). SENTIDA: A New Tool for Sentiment Analysis in Danish. Journal of Language Works - Sprogvidenskabeligt Studentertidsskrift, 4(1), 38–53.
