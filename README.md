@@ -39,11 +39,13 @@ If you use either the dataset or any of the Sentida sentiment analysis tool in y
 
 All data is in .csv format in UTF-8 encoding. See our Sentida implementation and documentation on the [official Sentida repository](https://github.com/guscode/sentida).
 
-| Folder              | Description                                                                                                                                             |
+| Folder/file         | Description                                                                                                                                             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Emma                | Includes the Emma validation dataset with all scorings given by coders as well as all 584 texts scored.                                                 |
+| Emma                | Includes the Emma validation dataset with all scorings given by coders as well as all 584 texts sentences for the dataset.                              |
 | Tests               | Includes the thousands of logistic tests performed for each tool (V2, V1, AFINN, and uPS) on each dataset (TP, TP2, Emma) and a summary of the results. |
 | Validation datasets | Includes TP.csv and TP2.csv used in the paper and previous studies (Lauridsen et al., 2019)                                                             |
+| *emma.csv*	      | The new validation dataset **emma** from this paper.													|
+
 
 ## References
 

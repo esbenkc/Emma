@@ -1,0 +1,353 @@
+Text,Valence,Intensity,Controllability,Utility,Type
+"Åh, jeg glæder mig så meget!",5,4,-3,5,Simple positive
+Betjeningen var elendig.,-3.8666666666666667,1.8666666666666667,-1.6666666666666667,-1.8,After but
+De er ikke sure.,-3,2,-1,-2,Simple positive
+De er sure.,-3,2,-3,-2,Simple negative
+De har svært ved at forstå kritikken.,-2,1,-2,-1,Simple negative
+De smider desværre rigtig meget mad ud.,-4,3,-2,-2,Simple negative
+De spiller stadig.,0.5,0.5,1.5,1,Not question
+De to søstre taler ikke sammen og ses sjældent.,-2,1.5,-1.5,-1,Simple negative
+Den åbner vores horisonter og giver nye perspektiver på tilværelsen.,3,-1,2,4,Simple positive
+Den bliver dårlig.,-4,2,-3,-4,Simple negative
+Den bliver ikke dårlig.,5,5,4,4,Simple positive
+Den er blevet flyttet.,0,-0.5,-2,0.5,Not question
+Den globale økonomi ryster ikke.,3,-3,3,2,Simple positive
+Den har en funktion og en betydning,2,-2,1,2,Simple positive
+Den har hverken en funktion eller en betydning,-3,3,-2,-2,Simple negative
+Den her er satme ikke god.,-4.333333333333333,3.6666666666666665,-1.3333333333333333,-1.3333333333333333,Simple negative
+Den her er satme også god.,4,-3,3,3,Simple positive
+Den stakkels landmand må få en traktor.,1.2727272727272727,-2.1818181818181817,2.6363636363636362,2.5454545454545454,Not question
+Den stakkels landmand må ikke få en traktor.,-3.3333333333333335,2,-2,-2.3333333333333335,Not question
+"Der er faktisk mange ældre, der heller ikke taler så kønt, og de lægger nok ikke altid mærke til det selv.",-2.111111111111111,1.5555555555555556,NA,-0.7777777777777778,Complex sentences
+Der er ikke tillid til ledelsen.,-1.3333333333333333,2.6666666666666665,0.3333333333333333,-0.6666666666666666,Simple negative
+"Der er noget personligt, som du ikke har haft tid til.",-1.3333333333333333,1.3333333333333333,-1,-1.3333333333333333,Not question
+Der er overhovedet ikke nogen der gider.,-3.6,1.6,-1.4,-3,Not question
+"Der var beskidt, men vi havde det godt.",1.7647058823529411,-0.4117647058823529,2.0588235294117645,1.8823529411764706,With but
+Der var beskidt.,-2.75,1.75,-1,-1.4166666666666667,Before but
+Deres favorit tæller også med.,-1,2,-2,-2,Simple positive
+Det bliver bare kedeligt.,-4.5,4,-1,-3,Simple negative
+Det er altid godt,3,-5,4,4,Simple positive
+"Det er bare gået så skidt, og ingen er tilfredse eller begejstrede.",-5,4,-4,-5,Simple negative
+Det er bekymrende.,-2,2,-2,-1,Simple negative
+Det er da fornuftigt.,3,-0.5,4.5,3,Simple positive
+Det er da ikke skønt.,-2.5,1.5,-2,-1,Simple negative
+Det er da klart når personalet har fingrene i kagedåsen.,-3.5,3.5,-2.5,-2,Simple negative
+Det er da lidt fornuftigt.,2,-2,1,1,Simple positive
+Det er da nogenlunde fornuftigt.,2,-3,2,2,Simple positive
+"Det er den udvikling, jeg går i gennem.",0,0,0,0,Simple positive
+Det er det bedste jeg har hørt om.,3.5,-1.5,1.5,1.5,Simple positive
+Det er det jeg skal have.,0,-2,3,2,Simple positive
+Det er det værste jeg har hørt om.,-4,3.5,-2.5,-3.5,Simple negative
+Det er dig skat.,0.6666666666666666,0.3333333333333333,0.5,0.3333333333333333,Not question
+Det er dit mål.,1.5,1.375,1.875,1.875,Not question
+det er en ære at komme i så fint selskab.,4,3,-2,1,Simple positive
+Det er en ære at komme i sådan et selskab.,3.75,0.25,NA,3,Simple positive
+Det er en god ide.,3,-4,2,3,Simple positive
+Det er flot og velfortjent,3.6666666666666665,-1.3333333333333333,2.3333333333333335,3.6666666666666665,Simple positive
+Det er fornuftigt.,2,0,1,3,Simple positive
+Det er gaven der bliver ved med at give.,3,-3,2,3,Simple positive
+"Det er ikke den udvikling, jeg går i gennem.",-1,-1,2,-1,Simple negative
+Det er ikke det jeg skal have.,-2,2,-3,-1,Simple negative
+Det er ikke en klassiker.,-2,3,-1,-2,Simple negative
+"Det er ikke et fantastik udgangspunkt, hvis vi skal styrke børns læselyst.",-3,4,2,-3,Simple negative
+Det er ikke et spændende eksperiment.,-2,1,0,-1,Simple negative
+Det er ikke fornuftigt.,-2,2,-1,-2,Simple negative
+Det er ikke genialt.,-3,2,-3,-4,Simple negative
+Det er ikke godt nyt.,-3,3,-2,-3,Simple negative
+Det er ikke helt rigtigt.,-2,1,-1,0,Simple negative
+Det er ikke koldt.,1,-2,1,1,Simple positive
+Det er ikke kunst.,-3,2,NA,-2.5,Not question
+Det er ikke rigtigt.,0,0,3,0,Simple negative
+Det er ikke sjovt.,-3.375,1.75,-2.875,-2.5,Simple negative
+Det er ikke skønt.,-1.5,0.5,-1,-1.5,Simple negative
+Det er ikke sødt.,-3,2,-2,-2,Simple negative
+Det er ikke spændende!,-5,5,-4,-5,Simple negative
+Det er ikke velfortjent.,-4,-2,-3,-4,Simple negative
+Det er ikke vildt spændende.,-1.5,-2.5,-1,0.5,Simple negative
+Det er koldt.,-1,0,0,0,Simple negative
+Det er kraftedme en god træner!,4,5,5,5,Simple positive
+Det er meget bekymrende.,-4,4,-1,-2,Simple negative
+Det er meget koldt,-2,0,-2,-1,Simple negative
+Det er mere praktisk at flyve.,4,-4,4,4,Not question
+"Det er noget af det bedste, jeg har set.",4.5,0.5,3,3.5,Simple positive
+Det er rigtigt.,5,-3,5,5,Simple positive
+"Det er sgu da det jeg skal have, mand.",2,-2,1,2,Simple positive
+Det er sjovt.,1.75,2.5,1.25,2,Simple positive
+Det er skønt.,3,2,3,3,Simple positive
+"Det er trist, når de helt små børn siger ord, de ikke selv forstår.",-1.8333333333333333,0.6666666666666666,-0.8333333333333334,-1.6666666666666667,Complex sentences
+Det er vel ikke en mulighed.,-2,2,3,0,Simple negative
+Det er vel også en mulighed.,1,-2,-2,-1,Simple positive
+Det er vildt spændende.,4,3,3,4,Simple positive
+"Det er vokset hvert år, så jeg er da spændt på, hvor mange der kommer i år",3.1666666666666665,0.9166666666666666,NA,2.5,Complex sentences
+Det forstår jeg.,2,1,2,5,Simple positive
+"Det går alt for vidt, når man som ansat på et institut får en sådan opfordring af en leder.",-3,4,-3,-2,Simple negative
+Det havde jeg glemt.,-0.75,-0.25,-1,-1,Simple negative
+Det havde jeg helt glemt.,-1,3,0,0,Simple negative
+Dét kan jeg godt grine af,1.5,1.5,0.5,1.5,Simple positive
+Dét kan jeg ikke grine af.,-4,0.5,-2.5,-2.5,Simple negative
+Det kan jeg ikke lide.,4,4,-3,-3,Simple negative
+Det kan jeg ikke overskue.,-4,1,-2,-4,Simple negative
+Det kan jeg lide.,4,3,3,4,Simple positive
+Det koster det.,-0.75,1.25,-0.5,0.25,Not question
+Det kunne være ret sjovt.,4,-3,3,3.5,Simple positive
+Det kunne være sjovt.,3,2,2,2,Simple positive
+Det kunne vi da ikke.,-3,-3,2,2,Simple negative
+Det ligner ikke dig.,-3,2,-2,-1,Simple negative
+Det ligner ikke os.,-2,3,1,-1,Simple negative
+Det ligner os.,2,-4,3,2,Simple positive
+Det må I vurdere.,-1,2,-2.5,-1,Simple positive
+Det skal ikke komme flere til gavn.,-2,1,-2,-2,Simple negative
+Det skal jeg se.,1,3,2,1,Simple positive
+Det skal vi da se.,4,-3,4,4,Simple positive
+Det skal vi se.,1.6666666666666667,0.3333333333333333,2,1.6666666666666667,Simple positive
+"Det tror jeg ikke på, men jeg har ikke en bedre forklaring selv.",-1.25,0.125,-0.5,-0.5,With but
+Det tror jeg ikke på.,-1.8333333333333333,2,-1.3333333333333333,-1.75,Before but
+Det var da lige godt groft.,-3,3,-1,-1,Simple negative
+"Det var det, vi snakkede om.",0.625,-1.25,0.875,1.375,Complex sentences
+Det var en stor succes!,5,-2,3,3,Simple positive
+Det var en stor succes.,5,-3,4,5,Simple positive
+Det var ikke en succes!,-4,3,-3,-1,Simple negative
+Det var ikke en succes.,-3.25,2,NA,-2,Simple negative
+Det var sådan du havde det.,-0.4,-0.8,1.2,0.2,Not question
+Det vil ikke spare borgerne for unødvendige fremmøder.,-3,2,-2,-2,Simple negative
+Det vil spare borgerne for unødvendige fremmøder.,2,-3,NA,0,Simple positive
+Dét ville man blive overrasket over.,1,2,NA,2,Simple negative
+Det virker ikke.,-2.6666666666666665,3,-3,-1.6666666666666667,Not question
+Dit humør og din livskvalitet bliver også påvirket,-2.3333333333333335,3.3333333333333335,-0.6666666666666666,-2.3333333333333335,Complex sentences
+Du burde gøre mere end at blande dig.,-2.5,2.875,-2.375,-1.875,Complex sentences
+Du burde gøre mere end bare at blande dig.,-2.375,3.125,-3.125,-2.25,Complex sentences
+Du er ikke handlekraftig.,-4,3,3,-3,Simple negative
+Du er ikke skør.,2,-4,3,3,Simple positive
+Du er måske udmattet af hverdagen!,-2,1,-1,2,Simple negative
+Du er måske udmattet af hverdagen?,1.3333333333333333,-1,0.6666666666666666,1.6666666666666667,Questions
+Du er også i gang.,1.5,-0.5,1,1.5,Not question
+Du gætter det aldrig.,2,3,-0.5,1.75,Simple positive
+Du gør mig lige en tjeneste.,3,-2.5,0,2.5,Not question
+Du har brug for hjælp.,-0.6,2.4,-1.8,0.4,Not question
+Du har det godt.,2.75,-2.75,3,3,Not question
+Du har en mening om alt.,0.5,-1,-0.5,0.25,Simple negative
+Du har ikke brug for hjælp.,-1.5,2.25,-1,-1.75,Not question
+Du har ikke kun koncentreret dig om udviklingen.,1.5,-1.1666666666666667,2.1666666666666665,2,Not question
+Du har kraftedeme en mening om alt.,-2,3,2,-1,Simple negative
+Du har lyst til en gang frokost.,0.5,1,1,1,Not question
+Du har nogle gode idéer.,2.4705882352941178,-0.9411764705882353,NA,NA,After but
+Du har tid til en kop kaffe.,1,-2.5,0,1,Not question
+Du har været igennem en hård proces.,-2,-4,-1,1,Simple negative
+Du har viljestyrke og charme tilovers.,3,-0.16666666666666666,2,3,Not question
+Du hoster meget i dag.,-1,3,-2,-2,Simple negative
+Du kan gøre plads til mere leg og kreativitet.,1,0,1.1666666666666667,1.6666666666666667,Not question
+Du kan huske den.,2,-1.25,2,2.25,Not question
+Du kan tro ja!,2,-2,2,1,Simple positive
+Du kan tro nej!,1.5,3,-0.5,0.5,Simple negative
+Du kommer i morgen.,-1.1666666666666667,1.25,-0.4166666666666667,-0.75,Not question
+Du snupper en øl med mig.,0.8,0.4,0.6,1,Not question
+"Du synes også at tiden flyver af sted, når man har det sjovt.",2.3333333333333335,0.3333333333333333,2.3333333333333335,2,Not question
+Du vil begynde at lave det igen.,-0.3333333333333333,1.3333333333333333,-0.3333333333333333,0.6666666666666666,Not question
+Du vil ikke begynde at lave det igen.,-1,0.5,-1,-0.5,Not question
+Du vil ikke lade være.,-2.3333333333333335,3,-2.6666666666666665,-2,Not question
+Du vil ikke lave det igen.,0.6666666666666666,2.3333333333333335,1,0.3333333333333333,Not question
+Du vil ikke lave det.,-5,5,-4,-3,Not question
+Du vil lave det igen.,1.6666666666666667,-0.3333333333333333,1,1.3333333333333333,Not question
+Du vil med ind og se ham.,1.75,-1.5,3,0,Not question
+"Ej, hvor gør det ondt.",-3,3,-3,-2,Simple negative
+"Er der noget personligt, som du ikke har haft tid til?",-2,1,-1.5,-1,Questions
+Er der overhovedet nogen der gider?,-3,1,-3.3333333333333335,-2.3333333333333335,Questions
+Er det dig skat?,1.3333333333333333,-0.6666666666666666,0.3333333333333333,1,Questions
+Er det ikke mere praktisk at flyve?,-0.3333333333333333,0.3333333333333333,0.6666666666666666,0,Questions
+Er det ikke sjovt?,-1,1.5,-1,-1,Questions
+Er det sjovt?,2,-0.5,1,2,Questions
+Er du også i gang?,-0.3333333333333333,0.6666666666666666,0,1,Questions
+Flere biler er kørt sammen.,-3,1.25,-4.25,-3.75,Simple negative
+Folk er bare fulde af kærlighed.,0.5,-0.5,1,1,Simple positive
+Folk er ikke fulde af kærlighed.,-3.5,3,1,-4,Simple negative
+Folk er ikke glade.,-2,0,0,-2,Simple negative
+"Før var det okay, men nu er det for galt.",-3.125,3.375,-1.75,-2.875,With but
+"Før var du sjov, nu er du bare dum at høre på!!",-4.6,4.2,-3.7,-4.2,With but
+Før var du sjov.,-2.411764705882353,1.2352941176470589,-1.8235294117647058,-2.2941176470588234,Before but
+Fuck hvor er det bare ikke sjovt.,-4,2,-2,-3,Simple negative
+"Glæder mig ikke til, vi skal afsted igen.",-3,-3,-2,-3,Simple negative
+"Glæder mig så meget til, vi skal afsted igen.",4,4,4,4,Simple positive
+Gør du mig ikke lige en tjeneste?,0.25,1.25,1.25,1,Questions
+"Gud ja, det havde jeg glemt.",0,1,2,0,Simple negative
+"Han er lidt dum, men han er også lidt sød.",2.090909090909091,-0.8181818181818182,1.5454545454545454,2,With but
+Han er lidt dum.,-2.1666666666666665,-0.16666666666666666,-0.08333333333333333,-0.8333333333333334,Before but
+Han er også lidt sød.,2.933333333333333,-1.2,1.4666666666666666,2.533333333333333,After but
+Han havde ikke lyst.,-2.4375,0.5,-0.6875,-1.25,After but
+Han holder op.,-1.1666666666666667,1.1666666666666667,-0.8333333333333334,-0.5,Not question
+Han holder snart op.,0.5,-1.5,1,0.5,Not question
+"Han kan hoppe højt, men han kan ikke løbe særlig hurtigt.",0.2,0.9,NA,0.3,With but
+Han kan hoppe højt.,1.75,1.125,1.625,1.375,Before but
+Han kan ikke løbe særlig hurtigt.,-1.9230769230769231,0.46153846153846156,-0.7692307692307693,-0.7692307692307693,After but
+"Han kunne godt have givet en hånd med, men han havde ikke lyst.",-2.5,0,-1.75,-1.625,With but
+Han kunne godt have givet en hånd med.,-1.5,1.25,-1.25,-1.5,Before but
+Han kunne tænke sig at hjælpe til.,3.6666666666666665,0.3333333333333333,3,3.3333333333333335,Not question
+Har du brug for hjælp?,1,2,1,2,Questions
+Har du det godt?,2,2.4,NA,2,Questions
+Har du ikke brug for hjælp?,0.25,-1,0.75,1,Questions
+Har du ikke kun koncentreret dig om udviklingen?,-2,1,-1,-1,Questions
+Har du ikke lyst til en gang frokost?,2.5,-0.5,2.5,3,Questions
+Har du tid til en kop kaffe?,3.3333333333333335,3,3.6666666666666665,3.6666666666666665,Questions
+Har du viljestyrke og charme tilovers?,2,2,0,0,Questions
+"Havde han ikke haft den tro på mig og mine evner, havde jeg aldrig troet, at det ville være en reel mulighed for mig",3.2,0.6,2.2,3.2,Complex sentences
+Holder han ikke snart op?,-2.6666666666666665,2,-2.6666666666666665,-2.6666666666666665,Questions
+"Hun er ikke i tvivl om, at det er opbakningen, som har fået hende på rette spor.",4,-0.7777777777777778,3.3333333333333335,4.222222222222222,Complex sentences
+"Hun havde en god og tryg opvækst i barndommen, men som 12-13 årig havnede hun i det forkerte selskab.",-2.5555555555555554,2.111111111111111,-1.8888888888888888,-2.3333333333333335,Complex sentences
+Hun klarede det nu meget godt.,3.1818181818181817,-1.4545454545454546,2.727272727272727,2.727272727272727,After but
+Hun reagerede voldeligt og aggressivt.,-4,4,-4,-3,Simple negative
+Hun var meget unik.,0,2.5,1,1,Simple positive
+Hvad er dit mål?,1.5,-0.5,0,3,Questions
+Hvad koster det?,-0.6666666666666666,1,0.6666666666666666,0.6666666666666666,Questions
+Hvad mener du?,-0.5,1,1,0,Questions
+"Hvad siger du til, at snuppe en øl med mig?",3.1666666666666665,2.5,2.5,1.6666666666666667,Questions
+Hvad skal dette ikke til for?,-2.6666666666666665,0,-3,-3,Questions
+Hvad skal du i dag?,-2,2.5,1.5,0,Questions
+Hvad skal vi høre nu?,3,-3,4,4,Questions
+Hvad skal vi lige gøre ved det?,0.6666666666666666,0.5,0,1,Questions
+Hvad tror du selv?,-2.5,3,-2.5,-2,Questions
+Hvad vil du helst?,0,0.6666666666666666,1,1,Questions
+Hvem er stadig tilbage?,0,1,3,1,Questions
+Hvem har flyttet den?,0,2.6666666666666665,-1.3333333333333333,-1,Questions
+Hvem kunne tænke sig at hjælpe til?,2,0,2,2,Questions
+"Hvem tror du, du er?",-3,3,-3,-4,Questions
+"Hvis du ikke kan forstå mine beskeder, kan du så forstå denne?",-2,1.8,0,-2,Questions
+Hvor blev du af?,1,1,0.5,1,Questions
+Hvor er min præmie?,-1.25,2.25,0,-1.25,Questions
+Hvor gør I det skidt.,-5,-4,-2,-2,Simple negative
+Hvordan har du det?,2,-2,2,1,Questions
+Hvornår holder han op?,-2.6666666666666665,3,-2.6666666666666665,-2.3333333333333335,Questions
+I dag er de gode venner,3.6666666666666665,-4.333333333333333,2.6666666666666665,5,Simple positive
+I dag er de ikke venner.,-3,1,0,-2,Simple negative
+I dag er de venner.,1,-2,1,1,Simple positive
+"I virkeligheden elsker jeg min bil, og jeg elsker at køre i den.",5,5,5,5,Simple positive
+"Ingen kan være i tvivl om, at det er fortjent",1,-1.5,1,0.5,Simple positive
+"Ingen kan være i tvivl om, at det ikke er fortjent",-3,4,-4,-3,Simple negative
+"Jeg afprøvede en drøm om at blive tatovør, men det skulle ikke være mig lige nu.",-0.3333333333333333,-0.8333333333333334,2.1666666666666665,0.6666666666666666,Complex sentences
+Jeg blev træt halvvejs og satte mig ned.,-0.8888888888888888,-0.3333333333333333,1.4444444444444444,0.4444444444444444,After but
+Jeg endte tit med at sidde inde på kontoret og tude.,-4.333333333333333,3.6666666666666665,-3.3333333333333335,-3.6666666666666665,Simple negative
+Jeg er allerede færdig.,1,-2,2,2,Simple positive
+"Jeg er blank, men du har nogle gode idéer.",2.3636363636363638,-1.1818181818181819,1.7272727272727273,2.727272727272727,With but
+Jeg er blank.,-1.6666666666666667,1,-0.8666666666666667,-1.4,Before but
+Jeg er færdig.,2,-2,3,3,Simple positive
+"Jeg er glad for, at de ikke kom i dag.",-1,2,2,-1,Simple negative
+"Jeg er glad for, at de kom i dag.",3,-2,2,3,Simple positive
+"Jeg er heller ikke i tvivl om, at de besøgende turister er begejstret.",5,5,5,5,Simple positive
+Jeg er målløs.,-3.5,3.5,-2.5,-2.5,Simple negative
+Jeg er stadig målløs,0,3,-1,0,Simple negative
+Jeg glæder mig til at se jer.,3,-2,1,2,Simple positive
+"Jeg håber virkelig ikke, at vi vinder prisen.",-2.3333333333333335,0.3333333333333333,-2.3333333333333335,-1.3333333333333333,Simple negative
+Jeg har brug for hjælp.,0,2,-2,1,Simple negative
+Jeg har det ikke skidt,1,-1.5,1.5,1.5,Simple positive
+Jeg har det skidt,-4,4,-3,-3,Simple negative
+Jeg har det varmt.,3,-3,3,3,Simple positive
+Jeg har forsøgt at få den idé ud i verden,0.6666666666666666,1.5,2,1,Complex sentences
+Jeg har haft et vildt år.,3,4,-2,3,Simple positive
+Jeg har i mange år drømt om at have mere tid til at udforske min kunst og male.,2,-1,NA,3,Simple positive
+Jeg har ikke en bedre forklaring selv.,-1.2,-0.3333333333333333,-1,-1.0666666666666667,After but
+Jeg har ikke haft et ret vildt år.,-3,-1,-1,-2,Simple negative
+Jeg har ikke købt billetter.,0,0,0,0,Simple negative
+Jeg har købt billetter.,3,-1,2.5,2.5,Simple positive
+"Jeg havde det super sjovt, men så blev jeg syg.",-1.1666666666666667,0.9166666666666666,-0.5833333333333334,-0.6666666666666666,With but
+Jeg havde det super sjovt.,4.2,-0.6,3.4,3.8,Before but
+Jeg havde forventet mere.,-2.5,0.5,1.5,-3.5,Simple negative
+Jeg havde ikke forventet mere.,2,-2,3,3,Simple negative
+Jeg kan genkende dig.,3,3,1,3,Simple positive
+Jeg kan høre det.,1.5,-2.5,2.5,2,Simple positive
+Jeg kan ikke lide at tale med dem.,-3,3,-2,-2.5,Simple negative
+Jeg kan ikke se pointen med det.,-2,-1,0,-2,Simple negative
+Jeg kan lide at tale med dem.,2,-1,2,2.5,Simple positive
+Jeg kan lige se det for mig!,5,5,5,5,Simple positive
+"Jeg kan mærke, at det er for længe siden.",-3,3,-3,0,Simple negative
+"Jeg kan mærke, at det ikke er for længe siden.",1,-2,1,1,Simple negative
+Jeg kan se pointen med det.,3,-4,2,3,Simple positive
+Jeg stemmer på dig.,3,-3,-2,4,Simple positive
+"Jeg synes ikke, det er godt.",-3,3,-3,-3,Simple negative
+"Jeg synes nu alligevel, at vi skulle tage og prøve.",1.5714285714285714,0.14285714285714285,NA,1.7142857142857142,Complex sentences
+"Jeg synes personligt det er brænd ærgerligt, hvis vi ikke får en afstemning.",-2.5,2,-0.5,-1,Complex sentences
+"Jeg synes, det er godt",3,-3,3,3,Simple positive
+"Jeg synes, det er helt vidunderligt og glæder mig MEGET over alt det skønne og humørfyldte, der er dukket frem i byen gennem de senere år.",4.6,1,4.6,4.4,Complex sentences
+Jeg tænker ikke på dig.,-2,3,-2,-3,Simple negative
+Jeg tænker på dig.,3,3,0,3,Simple positive
+Jeg tog fejl.,5,5,5,5,Simple negative
+Jeg tog ikke fejl.,1,-1,1.5,1,Simple positive
+Jeg tror du har forstået det!,-0.3333333333333333,-1,-1.6666666666666667,-0.3333333333333333,Simple positive
+Jeg tror du har forstået det.,2,-3,1,2,Simple positive
+"Jeg tror ikke, hun har forstået det, men hun klarede det nu meget godt.",1.9166666666666667,-1.0833333333333333,1.0833333333333333,1.25,With but
+"Jeg tror ikke, hun har forstået det.",-2.857142857142857,NA,-0.7142857142857143,NA,Before but
+"Jeg tror, at vi tog fejl.",-1.75,2.25,0,-0.5,Complex sentences
+"Jeg tror, jeg fortsætter lidt endnu.",4,-3,4,4,Simple positive
+"Jeg tror, jeg fortsætter.",1,-2,2,1,Simple positive
+"Jeg ved ikke, hvornår det har gået bedre.",2,-1,1.5,0.5,Simple positive
+Jeg vil bestemt ikke prøve den løsning næste gang.,-2.5,1.5,2,1.5,Simple negative
+Jeg vil ikke prøve den løsning næste gang.,0.5,-2.5,1.5,1,Simple negative
+Jeg vil prøve den løsning næste gang.,1,-1,1,1,Simple positive
+"Jeg ville have stået op hele tiden, men jeg blev træt halvvejs og satte mig ned.",-0.8571428571428571,-0.8571428571428571,NA,-0.8571428571428571,With but
+Jeg ville have stået op hele tiden.,-0.7142857142857143,0.7142857142857143,-0.9285714285714286,-0.5,Before but
+"Kæft, det er bare ikke sejt.",-3.3333333333333335,3.6666666666666665,-3.3333333333333335,-3.3333333333333335,Simple negative
+"Kæft, det er ikke sejt.",-3.5,3.5,-3,-2.5,Simple negative
+Kan du huske den?,1.6666666666666667,0,2,1.6666666666666667,Questions
+Kommer du i morgen?,2.3333333333333335,-0.6666666666666666,2,2.6666666666666665,Questions
+Kommunikationen til passagererne skal klart forbedres.,-1,-1,3,2,Simple negative
+Kunne man ikke gøre det anderledes?,-1,2.5,-2,-0.5,Questions
+Lørdagens kamp var ikke vigtig for os.,0,-3,2,0,Simple negative
+Må den stakkels landmand ikke få en traktor?,0,0,0,0,Questions
+Maden er for stærk.,-2,2,-2.3333333333333335,-1.6666666666666667,Simple negative
+"Maden var god, men betjeningen var elendig.",-0.7777777777777778,0.5555555555555556,-1.7777777777777777,-0.5555555555555556,With but
+Maden var god.,3.875,-3.375,2.625,3.375,Before but
+Man kunne gøre det anderledes.,-1,-0.8333333333333334,1.1666666666666667,0.5,Not question
+Man kunne have udfordret denne holdning.,0.25,0.5,NA,1.75,Complex sentences
+Man kunne ikke gøre det anderledes.,-2,-0.3333333333333333,-1.3333333333333333,-2.3333333333333335,Not question
+Men hvordan gør vi bedst det?,0,1,-1,0,Questions
+Min præmie er her.,2.75,0.25,1.25,3,Not question
+Motion holder hjernen sund gennem hele livet.,2.5,-2,2,2,Simple positive
+"Når alle udgifter og indtægter er gjort op, viser budgetopfølgningen, at året forventes at slutte med god balance i regnskabet.",2.5714285714285716,-1.7142857142857142,3.2857142857142856,3.142857142857143,Complex sentences
+Nogle gange forvirrer du mig.,0,1,-1,0,Simple negative
+"Nu er det også de helt små børn, der begynder at sige grimme ord, uden at de kender betydningen af ordene.",-4.4,3.8,-3.2,-2.6,Complex sentences
+Nu er du bare dum at høre på!!,-3.8,3.8,-3.4,-3.5,After but
+Ordene skulle føles lette i munden.,-1,1,2,0,Simple positive
+Ordene skulle ikke føles lette i munden.,-2.5,2,-2,-2.5,Simple negative
+Pas på rovfiskene!,-2,2.5,-2,NA,Simple negative
+programmet har givet anledning til panderynker.,-2.25,1.75,1,0.25,Simple negative
+Programmet har ikke givet anledning til panderynker.,4,-4,3.5,4,Simple positive
+Så blev jeg syg.,-2.7777777777777777,1,-2.888888888888889,-2.2222222222222223,After but
+Så er det jo lige meget med alle mine stavefejl.,0.8,-0.6,1.4,1.2,Complex sentences
+Så jeg så det ikke som en god mulighed.,0,0,4,3,Simple negative
+Så jeg så det som en god mulighed.,1,-2,1,0,Simple positive
+Ses på ikke fredag.,0,0,0,0,Simple negative
+Skulle det nu også være kunst?,-3.3333333333333335,2.3333333333333335,-1.6666666666666667,-2.6666666666666665,Questions
+Slap lig af.,0,0,2.5,0,Simple negative
+Spiller de stadig?,0.3333333333333333,1.3333333333333333,-0.3333333333333333,0.3333333333333333,Questions
+Spis I bare løs.,4,-5,4,4,Simple positive
+Stort hjerteligt tak for det!,5,-3,3,3,Simple positive
+"Synes du ikke også at tiden flyver af sted, når man har det sjovt?",3.5,2.5,3.25,3.75,Questions
+Tiden er god til at planlægge det næste år.,0,0,0,0,Simple positive
+"Til alt held for hende, fik hun medvind fra folketinget",2,-1,1,3,Simple positive
+Tror du ikke på mig?,-2,4,-3,-3,Questions
+Udviklingen blev ikke hjulpet på vej.,-2,2,-1,-2,Simple negative
+Under uddannelse,-1.5,-2,0,-1.5,NA
+Var det sådan du havde det?,1,-3,2,2,Questions
+Verdens kaffeproduktion er truet.,-1.5,2,-1,-2,Simple negative
+Vi er der snart!,4,4,1,4,Simple positive
+Vi er der snart!!,5,5,-3,5,Simple positive
+Vi er der snart.,0,-2,3,0,Simple positive
+Vi er godt på vej,2.5,-2.5,2,2.5,Simple positive
+Vi er ikke godt på vej.,-3,3,-1,-2,Simple negative
+Vi er ikke nødt til at have sandheden.,-2.5,0.5,1.5,-1,Simple negative
+Vi er ikke til at regne med.,-3,1.6666666666666667,-3.3333333333333335,-3.3333333333333335,Simple negative
+Vi er nødt til at have sandheden.,-1,3,0,0,Simple positive
+Vi er til at regne med.,2,-3,3,1,Simple positive
+"Vi fik lagt den energi i det, som vi ville.",2,4,3,3,Simple positive
+"Vi glæder os ikke til den tid, vi går i møde.",-4,0,-3,-4,Simple negative
+"Vi glæder os til den tid, vi går i møde.",3,-3,3.5,3.5,Simple positive
+Vi gør bedst det.,3,2,2,2,Not question
+Vi gør det bedst.,2.6666666666666665,0.6666666666666666,2.3333333333333335,2.3333333333333335,Not question
+Vi har ikke weekend.,-3,-4,-3,-2,Simple negative
+Vi har weekend!,5,-5,4,5,Simple positive
+Vi havde det godt.,2.9166666666666665,-2.25,2.5833333333333335,2.5833333333333335,After but
+Vi kan ikke den dag.,0,1,-1,-0.5,Simple negative
+Vi kan vinde!,4,-4,1,5,Simple positive
+"Vi må gøre op, om vi vil det til næste år.",0,1,1,0,Simple negative
+Vi sender et klart signal.,1,0,2.5,1,Simple positive
+Vil du ikke begynde at lave det igen?,1.6666666666666667,-1.6666666666666667,1.6666666666666667,2.3333333333333335,Questions
+Vil du ikke lave det igen?,0.75,-0.5,0.75,0.5,Questions
+Vil du ikke nok lade være?,-2.5,2.5,1.5,-2.5,Questions
+Vil du med ind og se ham?,1.5,2.5,0,1.5,Questions

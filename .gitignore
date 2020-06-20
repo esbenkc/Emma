@@ -1,0 +1,4 @@
+*.r
+*.Rmd
+*.Rdata
+*.Rhistory
