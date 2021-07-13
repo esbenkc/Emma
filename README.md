@@ -2,6 +2,8 @@
 
 Emma is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
 
+![type dataset](https://img.shields.io/badge/type-dataset-blue)
+
 - [Emma: Emotional Multidimensional Analysis](#emma-emotional-multidimensional-analysis)
   - [Introduction](#introduction)
     - [Emma](#emma)
