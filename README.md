@@ -1,4 +1,4 @@
-# Emma: Emotional Multidimensional Analysis
+# 🧬 Emma: Emotional Multidimensional Analysis
 
 Emma is a validation dataset for Danish sentiment analysis tools consisting of (currently) 352 domain-general sentences rated by 30 raters on four emotional dimensions. This will gradually increase in quality and size.
 
